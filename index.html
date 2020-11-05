@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>OqDigital | Documentação OqDigital</title>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('#mode').addEventListener('click',()=>{
+                document.querySelector('html').classList.toggle('dark');
+            })
+        });
+
+
+    </script>
+
+    <div id="wrapper">
+
+        <div id="mode" >
+            <div class="dark">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>lightmode</title>
+                    <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
+                </svg>
+            </div>
+            <div class="light">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>darkmode</title>
+                    <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <h1>Documentação OqDigital</h1>
+                            <p class="lead">Documentação listando nossos endPoints versão 2.0</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="#line1">Introdução</a></li>
+                            <li><a href="#line2">Auth</a>
+                                <ul class="nav">
+                                    <li><a href="#line2_a">Gerando um token de acesso</a></li>
+                                    <li><a href="#line2_2">Refresh Token</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line3">Leads</a>
+                                <ul class="nav">
+                                    <li><a href="#line3_1">Create Lead - ValidationCode</a></li>
+                                    <li><a href="#line3_2">Create Lead - Player + ActionId</a></li>
+                                    <li><a href="#line3_3">Update Status Lead</a></li>
+                                    <li><a href="#line3_4">Update Status and Value Lead</a></li>
+                                    <li><a href="#line3_5">List number leads per Action</a></li>
+                                    <li><a href="#line3_6">List player leads</a></li>
+                                    <li><a href="#line3_7">List leads action</a></li>
+                                    <li><a href="#line3_8">List number leads per state</a></li>
+                                    <li><a href="#line3_9">Lead data</a></li>
+                                    <li><a href="#line3_10">List client leads</a></li>
+                                    <!-- <li><a href="#line3_10">Update lead</a></li> -->
+                                    <!-- <li><a href="#line3_11">Delete lead</a></li>   -->
+                                </ul>
+                            </li>
+                            <!-- <li><a href="#line4">Necessary Plugins</a></li>
+                            <li><a href="#line5">Creating Blog Pages</a></li>
+                            <li><a href="#line6">Revolution Slider</a></li>
+                            <li><a href="#line7">How to Use Option Panel</a>
+                                <ul class="nav">
+                                    <li><a href="#line7_1">General Options</a></li>
+                                    <li><a href="#line7_2">Style Options</a></li>
+                                    <li><a href="#line7_3">Header Options</a></li>
+                                    <li><a href="#line7_4">Font Options</a></li>
+                                    <li><a href="#line7_5">Slider Options</a></li>
+                                    <li><a href="#line7_6">Page Options</a></li>
+                                    <li><a href="#line7_7">Import & Export</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line8">Support Desk</a></li>
+                            <li><a href="#line9">Files & Sources</a></li>
+                            <li><a href="#line10">Version History (Changelog)</a></li>
+                            <li><a href="#line11">Copyright and license</a></li> -->
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    <section class="welcome">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                               <h2 class="dark-text">Dados técnicos<hr></h2>
+                                <div class="row">
+
+                                    <div class="col-md-12 full">
+                                        <div class="intro1">
+                                            <ul>
+                                                <li><strong>O que é: </strong>Documentação dos endPoints da OqDigital</li>
+                                                <li><strong>Versão: </strong> v 2.0</li>
+                                                <li><strong>Autores: </strong><a href="https://github.com/alexiakattah" target="_blank">Alexia Kattah</a> | <a href="https://github.com/iancanario" target="_blank">Ian Canário</a> | <a href="https://github.com/SantosRafa" target="_blank">Rafael Santos</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <hr>
+                                        <div>
+                                            <p>Esta é a documentação da nossa API. Estamos em constante evolução, portanto, é fundamental que acompanhem as atualizações constantemente.</p>
+                                            
+                                            <h4>API RESTful</h4>
+                                            <p>Nossa API foi organizada em cima da arquitetura RESTful, contendo no body de cada requisição os objetos no formato JSON.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="line1" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Introdução<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <h4>Domínio base</h4>
+
+                                <p>Nossa API contém os seguintes domínios bases:</p>
+
+                                <p><strong>Homologação:</strong> https://us-central1-oqhomapi.cloudfunctions.net/v2/</p>
+                                    
+                                <p><strong>Produção:</strong> https://us-central1-oq20-139d9.cloudfunctions.net/v2/</p>
+                                    
+                                <h4>Token de Acesso</h4>
+
+                                <p>A API da OQ Digital exige um token do tipo Bearer, cujo mesmo deve ser repassado em todas as requisições. Ver no menu "Auth" deste manual as orientações necessárias de como obter seu token.</p>
+
+                                <h4>Respostas da API</h4>
+
+                                <p>Um JSON será retornado em todas as respostas da API, incluindo casos de erro (código, sucesso(sim/não) e mensagem).</p>
+
+                                <h4>ValidationCode</h4>
+
+                                <p>O "validationCode" é um item da resposta à solicitação de criação de um Lead via API. Ela deve ser usada em todas as requisições update e delete de um Lead.</p>
+
+
+                            
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line2" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Auth <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>Nesta sessão iremos apresentar a forma de adquirir as chaves de acesso (token) à nossa api, <br/> necessário para a utilização em todas as chamadas.</p>
+
+                        <div class="col-md-12">
+                            <h4 id="line2_a">POST - Autenticação - Gerando um token de acesso</h4>
+
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/signIn
+                            </pre>
+                            <p>Este endpoint é responsável por gerar um token de acesso que precisará ser passado em todos os cabeçalhos das requisições do tipo "Bearer". O token  é o "accessToken", retornado na resposta da chamada API</p>
+                            <h5>Request</h5>
+                            <p>BODY</p>
+    
+                            <pre class="brush:html">
+                               {
+                                   "username": "email@email.com",
+                                   "password":"password"
+                               }
+                            </pre>
+    
+                            <h5>Response</h5>
+    
+                            <p>BODY</p>
+                            <pre class="brush: html">
+                               {
+                                   "code": 200,
+                                   "success": true,
+                                   "message": "Auth OK",
+                                   "data": {
+                                     "refreshToken": "AE0u-NfOKyeuFdNrgQ1BdsxeJuujjf-z8LnDhuZDSzGa92mgNIgNBhaO3zkB9WnI4QDIE2zVEknaTTiQEuSyUj4AM2Crb_k5i1gHPzFcRtyvRvOFw6tcG_6lYVOFCSpikbEhB-rDi8psTlQM0FpljB3a-nNJlf3BzGowDvzgdzw2VNVsFpWGqNx3dMbl-AqX_bEtKWTkTzou",
+                                     "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRnVsYW5vIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL29xaG9tYXBpIiwiYXVkIjoib3Fob21hcGkiLCJhdXRoX3RpbWUiOjE1OTQxMzE1MzQsInVzZXJfaWQiOiJIQ1hqQkNMU2k3VDQwemNWNWp6SVVsQ2dhdjAyIiwic3ViIjoiSENYakJDTFNpN1Q0MHpjVjVqeklVbENnYXYwMiIsImlhdCI6MTU5NDEzMTUzNCwiZXhwIjoxNTk0MTM1MTM0LCJlbWFpbCI6ImFkbWluQGhwLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhZG1pbkBocC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.CLA5GMP_FQRmaNpfzfV_L2HJL28OVasn3xY95I8C1L9AbzBM-NTdgxim9w0-1Rq-HIDRY-uj57oLzXi3Jy1ViFKYuHGVPSQcJquRr6hECK_wwUWWyoToZuzpZu0WaLamW2PN0c0TOGK3lM53RLDk4NsQQ40Qn3l7uN2OkPIheubLQiL8M49-77vRK8ZvB4Ptkz3OWlbiGdt_vo374kUOhiuEFSU-dl5ioZjnK-IUyhMZfX5JZjDvu0Dnl9BF9qi6kEhm3dmgHbmeVoFr8vDeNbCgimRo3sTfYYMY_Nz_o1Cu8argu3iLo5CLTfW7TmvK5bAD3Inyvd1KJUPbVzk86Q",
+                                     "expirationTime": 1594135134217
+                                   }
+                               }
+                            </pre>
+                        
+                       
+                        </div> 
+                            
+                            <div class="col-md-12" >
+                                <h4 id="line2_2"> POST - Refresh Token  </h4>
+                                <pre class="brush: html">
+                                    https://us-central1-oqhomapi.cloudfunctions.net/v2/refreshToken
+                                </pre>
+                                
+                                <p>Em algum momento, seu Token pode expirar. Para gerar um novo sem a necessidade de uma nova autenticação, disponibilizamos este endpoint a fim de que você envie como parâmetro o "refreshToken" obtido na autenticação. Se ele estiver correto, a API vai retornar um novo token válido com a nomenclatura "accessToken" e um novo "refreshToken" para ser usado posteriormente.</p>
+                                
+                                <h5>Request</h5>
+                                <p>BODY</p>
+                                    <pre class="brush: html" >
+                                        {
+                                          "refresh_token": "AE0u-Nfda3PJsO7_VPDNts5sntRiYWFHVAccXF93GWJYJ-sfqD644b_wjLnSc-v-E6YQbb0kKJ7TRJGotveTTagw8iekqH8YHfGHznwZQljWHMc5L4HS8wZkRYkvun1ibgkoCCSX8oCsHQNfqaEFOQU-nMsLFbHpS1Vmzj9biOKnDajP7k3q21eeErDxy0lNIveM9jEbBBtD"
+                                        }
+                                    </pre>
+                                
+                                <h5>Response</h5>
+                                <p>BODY</p>
+                                <pre class="brush: html">
+                                    {
+                                        "code": 200,
+                                        "success": true,
+                                        "message": "Refresh Token",
+                                        "data": {
+                                          "access_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRnVsYW5vIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL29xaG9tYXBpIiwiYXVkIjoib3Fob21hcGkiLCJhdXRoX3RpbWUiOjE1OTIzOTc4NTEsInVzZXJfaWQiOiJIQ1hqQkNMU2k3VDQwemNWNWp6SVVsQ2dhdjAyIiwic3ViIjoiSENYakJDTFNpN1Q0MHpjVjVqeklVbENnYXYwMiIsImlhdCI6MTU5NDEzMTc1MCwiZXhwIjoxNTk0MTM1MzUwLCJlbWFpbCI6ImFkbWluQGhwLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhZG1pbkBocC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.E1Cs8LV1-IFKgoAZXZP1fHc-l2CiftR7IjXDsg0uPDWxR9kXH24y8AYj2kRS-mX9CtpaSwtu1cb4L97rbUbrxym7tAU6vQ9HNGHvoC7PmDjfhuHwNFSKNpVK7ErviZt5bhluCss1R6kmOUEMyMIfwdT5f9RiT8gRuTZDPGwkYRxIbQLBioQ5SzOCryCSZIgKAKRtnYOB3ypS3gWj-njqHR7DNIWogcB6qFxzuMex-wUdzqSjIFzeW9vllrxS-Hb5jXU3KdmfwAmr0i_QFrvw108v2YYWagacU57PZuk-KxFIhh7jybyqDU9rrY8M5GGNMaI6zSZpjKd1xjpNU6mscQ",
+                                          "expires_in": "3600",
+                                          "token_type": "Bearer",
+                                          "refresh_token": "AE0u-NfvBaKOHixC_DNU8v2a0ExrV780WOao-LLGMpb-R3buc38SLI-BmRYOT30Wva2jDuGrLwh8ySsdt-p6I3fm_on2r2h9qVoMLI4ZwnAZZ9q9f41VtRM4k0nA6bFfzU23wIEoMSrYMTsrGgu7uRfMDL31wmnRNzOo2v8VsnKAYHSLXBzmNzuZ6uGKyRvQC7DPPAZCnOCh",
+                                          "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2MjNlMTBhMDQ1MTQwZjFjZmQ0YmUwNDY2Y2Y4MDM1MmI1OWY4MWUiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiRnVsYW5vIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL29xaG9tYXBpIiwiYXVkIjoib3Fob21hcGkiLCJhdXRoX3RpbWUiOjE1OTIzOTc4NTEsInVzZXJfaWQiOiJIQ1hqQkNMU2k3VDQwemNWNWp6SVVsQ2dhdjAyIiwic3ViIjoiSENYakJDTFNpN1Q0MHpjVjVqeklVbENnYXYwMiIsImlhdCI6MTU5NDEzMTc1MCwiZXhwIjoxNTk0MTM1MzUwLCJlbWFpbCI6ImFkbWluQGhwLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJhZG1pbkBocC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.E1Cs8LV1-IFKgoAZXZP1fHc-l2CiftR7IjXDsg0uPDWxR9kXH24y8AYj2kRS-mX9CtpaSwtu1cb4L97rbUbrxym7tAU6vQ9HNGHvoC7PmDjfhuHwNFSKNpVK7ErviZt5bhluCss1R6kmOUEMyMIfwdT5f9RiT8gRuTZDPGwkYRxIbQLBioQ5SzOCryCSZIgKAKRtnYOB3ypS3gWj-njqHR7DNIWogcB6qFxzuMex-wUdzqSjIFzeW9vllrxS-Hb5jXU3KdmfwAmr0i_QFrvw108v2YYWagacU57PZuk-KxFIhh7jybyqDU9rrY8M5GGNMaI6zSZpjKd1xjpNU6mscQ",
+                                          "user_id": "HCXjBCLSi7T40zcV5jzIUlCgav02",
+                                          "project_id": "565668799670"
+                                        }
+                                      }
+                                </pre>
+                            
+                            </div>
+                            
+                            
+                        
+                        </section>
+                    <!-- end section -->
+
+                    <section id="line3" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Leads<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>A seguir os endpoints para manipulação de leads.</p>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_1"> POST - Create Lead - with validationCode  </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/create
+                             </pre>
+                             <div>
+
+                                 <p>Este endpoint é o responsável por gerar um token de acesso, cujo mesmo é necessário ser passado em todos os cabeçalhos das requisições do tipo "Bearer". O token é o "accessToken", retornado na resposta da chamada API.</p>
+                             </div>
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "validationCode":"VALIDATIONCODE",
+                                    "lead":{
+                                        "name": "Nome completo",
+                                        "phone":"(99) 99999-9999",
+                                        "email": "email@email.com",
+                                        "cpf":"111.111.111-11",
+                                        "state":"UF",
+                                        "city":"Cidade",
+                                        "acceptedTerms": true,
+                                        "converted": false
+                                    }
+                                }
+                             </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "message": "Cadastro concluido com sucesso!",
+                                    "success": true,
+                                    "validationCode": "536F20778F"
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_2"> POST - Create Lead - with player + actionId  </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/create
+                             </pre>
+
+                             <p>Este endpoint permite criação de um novo Lead, passando como parâmetro os dados de "player" (email) e "actionId" (deve pegar o ID da ação dentro da plataforma web).</p>
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "search": {
+                                        "player":"player@email.com",
+                                        "actionId":"ACTION_ID"
+                                    },
+                                    "lead":{
+                                        "name": "Nome completo",
+                                        "phone":"(99) 99999-9999",
+                                        "email": "email@email.com",
+                                        "cpf":"111.111.111-11",
+                                        "state":"UF",
+                                        "city":"Cidade",
+                                        "acceptedTerms": true,
+                                        "converted": false
+                                    }
+                                }
+                             </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "message": "Cadastro concluido com sucesso!",
+                                    "success": true,
+                                    "validationCode": "536F20778F"
+                                }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_3"> PUT - Update Status Lead </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/update
+                             </pre>
+
+                             <p>Este endpoint permite fazer a atualização do status de um determinado lead, baseado nos "STEPS" configurados na aplicação.
+
+                                Entenda como STEPS os possíveis status em que um LEAD pode estar, e esta configuração depende da configuração feita na sua plataforma. Exemplo:
+
+                                <ol>
+                                    <li>Cadastro Efetuado</li>
+                                    <li>Contato realizado</li>
+                                    <li>Lead convertido</li>
+                                </ol>
+
+                                Ou seja, neste exemplo, uma pessoa que acabou de se cadastrar dentro de uma ação, ele recebe o status "0". Quando for feito um contato com o lead, você fará uma chamada para este endpoint, passando "1" no campo status para que haja mudança do STEP para este lead.
+
+
+                            </p>
+                            
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "validationCode":"VALIDATIONCODE",
+                                    "search": {
+                                        "email": "email@email.com"
+                                    },
+                                    "lead":{
+                                        "status":3
+                                    }
+                                }
+                             </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "message": "Lead atualizado com sucesso..",
+                                    "success": true,
+                                    "data": {
+                                      "name": "NOME COMPLEETO",
+                                      "email": "email@email.com",
+                                      "status": 3
+                                    }
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_4"> PUT - Update Status and Value Lead  </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/updateStatusLead
+                             </pre>
+
+                             <p>Este endpoint permite fazer a atualização do status de um determinado lead, baseado nos "STEPS" configurados na aplicação. Além dos steps, esse endpoint também libera pontuação para o player, de acordo com o que for passado no campo "value".</p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "validationCode":"VALIDATIONCODE",
+                                    "search": {
+                                        "email": "email@email.com"
+                                    },
+                                    "lead":{
+                                        "status":3,
+                                        "value": 25
+                                    }
+                                }
+                             </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "message": "Lead atualizado com sucesso..",
+                                    "success": true,
+                                    "data": {
+                                      "name": "NOME COMPLEETO",
+                                      "email": "email@email.com",
+                                      "status": 3,
+                                      "value": 25
+                                    }
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_5"> GET - List number leads per Action   </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/leadsInAction
+                             </pre>
+
+                             <p>Este endpoint permite fazer listagem de todos os leads em uma determinada action.
+
+                            </p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "validationCode":"VALIDATIONCODE",
+                                    "search": {
+                                        "email": "email@email.com"
+                                    },
+                                    "lead":{
+                                        "status":3,
+                                        "value": 25
+                                    }
+                                }
+                            </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "message": "Lead atualizado com sucesso..",
+                                    "success": true,
+                                    "data": {
+                                      "name": "NOME COMPLEETO",
+                                      "email": "email@email.com",
+                                      "status": 3,
+                                      "value": 25
+                                    }
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_6"> GET - List player leads   </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/leadsInAction
+                             </pre>
+
+                             <p>Este endpoint permite fazer listagem de todos os leads de um player.</p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "search":{
+                                      "email": "alexia@teste.com"
+                                    }
+                                  }
+                            </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "success": true,
+                                    "message": "Leads encontrado com sucesso",
+                                    "data": {
+                                      "-MI5S0wt32P_ZO2NjfI9": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Teste "
+                                        },
+                                        "actionId": "-MI4RYik1wfidF6dQlOs",
+                                        "city": "Brasiléia",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "547.654.654-65",
+                                        "createdAt": 1601057329430,
+                                        "email": "aaa@e.com.br",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "gx6rsilgmo9h88rs",
+                                        "name": "teste alexia",
+                                        "phone": "(45) 64654-6546",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MI5S0wt32P_ZO2NjfI9"
+                                      },
+                                      "-MI5ZDBAfIsDnDT0Gmpl": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Teste "
+                                        },
+                                        "actionId": "-MI4RYik1wfidF6dQlOs",
+                                        "city": "Brasiléia",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "576.546.546-54",
+                                        "createdAt": 1601059209664,
+                                        "email": "aaaa@e.com.br",
+                                        "isVerified": false,
+                                        "leadToken": "627316fclk276blc",
+                                        "name": "teste alexia 2",
+                                        "phone": "(45) 64654-6555",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MI5ZDBAfIsDnDT0Gmpl"
+                                      },
+                                      "-MIU-HYKyAm6hXJ7BKFM": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MITy3SG1R7KwVtuVeNA",
+                                        "city": "Anagé",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "123.456.789-00",
+                                        "createdAt": 1601469228651,
+                                        "email": "rsantoslfap@gmail.com",
+                                        "formCompleted": true,
+                                        "isVerified": false,
+                                        "leadToken": "2meteu10291e02hk",
+                                        "name": "Rafael Santos Laborda Fernandes",
+                                        "phone": "(71) 98337-3938",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "BA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MIU-HYKyAm6hXJ7BKFM"
+                                      },
+                                      "-MJi31lg7i4ddTiKN3bB": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MJi2lfProNQCl7WEQTZ",
+                                        "city": "Santa Rosa do Purus",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "564.231.324-69",
+                                        "createdAt": 1602795613262,
+                                        "email": "testestatus@teste.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "i309b6dfa01io0dm",
+                                        "name": "alexia",
+                                        "phone": "(65) 46513-2132",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJi31lg7i4ddTiKN3bB"
+                                      },
+                                      "-MJi412U7bFV9nJZBNRM": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MJi2lfProNQCl7WEQTZ",
+                                        "city": "Antônio Olinto",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "212.341.234-12",
+                                        "createdAt": 1602795871933,
+                                        "email": "hhh@i.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "7eool1n8ydgdxcg3",
+                                        "name": "tewt",
+                                        "phone": "(54) 32345-2345",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "PR",
+                                        "status": 3,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJi412U7bFV9nJZBNRM"
+                                      },
+                                      "-MJi4M3LC03Qe7I1tfES": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MJi2lfProNQCl7WEQTZ",
+                                        "city": "Antônio Olinto",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "212.412.344-56",
+                                        "createdAt": 1602795958014,
+                                        "email": "hhhh@i.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "43ek8gjdqzlykmvt",
+                                        "name": "tewt",
+                                        "phone": "(54) 32342-3452",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "PR",
+                                        "status": 3,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJi4M3LC03Qe7I1tfES"
+                                      },
+                                      "-MKCAF_J4ICBFG6XxS6H": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Salvador",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "000.000.171-00",
+                                        "createdAt": 1603317598490,
+                                        "email": "ian@teste171.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "ikjbuqcntpizgicn",
+                                        "name": "Ian Canário",
+                                        "phone": "(75) 99999-9999",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "BA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKCAF_J4ICBFG6XxS6H"
+                                      },
+                                      "-MKa5Q0qV8ehKvLnmjqY": {
+                                        "acceptedTerms": false,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Barra do Corda",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "614.228.343-10",
+                                        "createdAt": 1603735760195,
+                                        "email": "testandonome@teste.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "29bnbbinqppgjl8m",
+                                        "name": "Testandonome",
+                                        "phone": "(12) 345-6789",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "MA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKa5Q0qV8ehKvLnmjqY"
+                                      },
+                                      "-MKa7Afdpd8581deDc1i": {
+                                        "acceptedTerms": false,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Anchieta",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "",
+                                        "createdAt": 1603736221662,
+                                        "email": "",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "eag2rkj8pe85anps",
+                                        "name": "",
+                                        "phone": "",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "ES",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKa7Afdpd8581deDc1i"
+                                      }
+                                    }
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_7"> GET - List leads action   </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/getLeadsAction
+                             </pre>
+
+                             <p>Este endpoint permite fazer listagem de todos os leads em uma determinada action.
+
+                            </p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {    
+                                    "search":{
+                                        "actionId": "id da ação"
+                                    }
+                                }
+                            </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "success": true,
+                                    "message": "Leads Encontradas",
+                                    "data": {
+                                      "-MItmVpbkx4N0FzJ-pUT": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Rodrigues Alves",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "857.987.465-46",
+                                        "createdAt": 1601918602038,
+                                        "email": "ss@re.com",
+                                        "isVerified": false,
+                                        "leadToken": "pxrz052vza8c82ow",
+                                        "name": "zdsa",
+                                        "phone": "(65) 46546-5465",
+                                        "playerId": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MItmVpbkx4N0FzJ-pUT"
+                                      },
+                                      "-MItq_64ZfPSqAeObUgv": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Rodrigues Alves",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "857.987.465-44",
+                                        "createdAt": 1601919668050,
+                                        "email": "ss@re3.com",
+                                        "isVerified": false,
+                                        "leadToken": "5ty8j9q89na9uv8o",
+                                        "name": "zdsa",
+                                        "phone": "(65) 46546-5455",
+                                        "playerId": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MItq_64ZfPSqAeObUgv"
+                                      },
+                                      "-MItrKDVimRjLYtragjI": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Rodrigues Alves",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "857.874.634-56",
+                                        "createdAt": 1601919864942,
+                                        "email": "ss@re3D.com",
+                                        "isVerified": false,
+                                        "leadToken": "wheq92gsriaxb3wt",
+                                        "name": "zdsa",
+                                        "phone": "(65) 46546-5454",
+                                        "playerId": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MItrKDVimRjLYtragjI"
+                                      },
+                                      "-MJ3YfmFJ6fdoS55ODeo": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Alto Paraíso de Goiás",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "132.151.321-56",
+                                        "createdAt": 1602099263787,
+                                        "email": "teste@teste.com",
+                                        "isVerified": false,
+                                        "leadToken": "vosimk978ilm0px6",
+                                        "name": "teste",
+                                        "phone": "(02) 03213-0036",
+                                        "playerId": "u1e9LroNFdRJesxGHnlsusIYJbu2",
+                                        "state": "GO",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJ3YfmFJ6fdoS55ODeo"
+                                      },
+                                      "-MJMkFLI-2f7s7S65Ugu": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Capixaba",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "458.787.875-46",
+                                        "createdAt": 1602421327228,
+                                        "email": "aaa@dg.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "lm75phneoykj5xh5",
+                                        "name": "teste lead",
+                                        "phone": "(65) 79879-6584",
+                                        "playerId": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJMkFLI-2f7s7S65Ugu"
+                                      },
+                                      "-MJMmD5S4qTUjIbRWOJy": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Capixaba",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "458.787.875-54",
+                                        "createdAt": 1602421842294,
+                                        "email": "aa4a@dg.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "dsbjph3gcuer22lb",
+                                        "name": "teste leadf",
+                                        "phone": "(65) 79879-6576",
+                                        "playerId": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJMmD5S4qTUjIbRWOJy"
+                                      },
+                                      "-MJMngSzklKX6yIuPtVX": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Capixaba",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "457.877.554-42",
+                                        "createdAt": 1602422228826,
+                                        "email": "aa4a@dgadg.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "d1eesy73j6dhf5p7",
+                                        "name": "teste leadf",
+                                        "phone": "(65) 79829-6567",
+                                        "playerId": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJMngSzklKX6yIuPtVX"
+                                      },
+                                      "-MKCAF_J4ICBFG6XxS6H": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Salvador",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "000.000.171-00",
+                                        "createdAt": 1603317598490,
+                                        "email": "ian@teste171.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "ikjbuqcntpizgicn",
+                                        "name": "Ian Canário",
+                                        "phone": "(75) 99999-9998",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "BA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKCAF_J4ICBFG6XxS6H"
+                                      },
+                                      "-MKa5Q0qV8ehKvLnmjqY": {
+                                        "acceptedTerms": false,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Barra do Corda",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "614.228.343-10",
+                                        "createdAt": 1603735760195,
+                                        "email": "testandonome@teste.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "29bnbbinqppgjl8m",
+                                        "name": "Testandonome",
+                                        "phone": "(12) 345-6789",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "MA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKa5Q0qV8ehKvLnmjqY"
+                                      },
+                                      "-MKa7Afdpd8581deDc1i": {
+                                        "acceptedTerms": false,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Anchieta",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "",
+                                        "createdAt": 1603736221662,
+                                        "email": "",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "eag2rkj8pe85anps",
+                                        "name": "",
+                                        "phone": "",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "ES",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKa7Afdpd8581deDc1i"
+                                      }
+                                    }
+                                  }
+                                  
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_8"> GET - List number leads per state   </h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/leads/getLeadsPerState
+                             </pre>
+
+                             <p>Este endpoint permite fazer listagem de todos os leads em uma publicação.</p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {    
+                                    "search":{
+                                        "actionId": "id da ação"
+                                    }
+                                }
+                            </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "success": true,
+                                    "message": "Leads encontradas",
+                                    "data": [
+                                      {
+                                        "id": "SC",
+                                        "label": "SC",
+                                        "value": 1
+                                      },
+                                      {
+                                        "id": "CE",
+                                        "label": "CE",
+                                        "value": 1
+                                      },
+                                      {
+                                        "id": "MG",
+                                        "label": "MG",
+                                        "value": 1
+                                      },
+                                      {
+                                        "id": "AC",
+                                        "label": "AC",
+                                        "value": 28
+                                      },
+                                      {
+                                        "id": "MA",
+                                        "label": "MA",
+                                        "value": 2
+                                      },
+                                      {
+                                        "id": "AM",
+                                        "label": "AM",
+                                        "value": 7
+                                      },
+                                      {
+                                        "id": "AL",
+                                        "label": "AL",
+                                        "value": 2
+                                      },
+                                      {
+                                        "id": "PB",
+                                        "label": "PB",
+                                        "value": 28
+                                      },
+                                      {
+                                        "id": "BA",
+                                        "label": "BA",
+                                        "value": 39
+                                      },
+                                      {
+                                        "id": "PE",
+                                        "label": "PE",
+                                        "value": 1
+                                      },
+                                      {
+                                        "id": "PI",
+                                        "label": "PI",
+                                        "value": 2
+                                      },
+                                      {
+                                        "id": "AP",
+                                        "label": "AP",
+                                        "value": 4
+                                      },
+                                      {
+                                        "id": "GO",
+                                        "label": "GO",
+                                        "value": 1
+                                      },
+                                      {
+                                        "id": "PR",
+                                        "label": "PR",
+                                        "value": 2
+                                      },
+                                      {
+                                        "id": "ES",
+                                        "label": "ES",
+                                        "value": 1
+                                      }
+                                    ]
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_9"> GET - Lead data</h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/getLead
+                             </pre>
+
+                             <p>Este endpoint permite ler os dados de um lead.</p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {    
+                                    "search":{
+                                        "email": "ian@teste171.com"
+                                    },
+                                    "validationCode": "VALIDATIONCODE"
+                                }
+                            </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "success": true,
+                                    "message": "Lead encontrado",
+                                    "date": {
+                                      "acceptedTerms": true,
+                                      "action": {
+                                        "actionTitle": "Ação escolhida"
+                                      },
+                                      "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                      "city": "Salvador",
+                                      "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                      "converted": false,
+                                      "cpf": "000.000.171-00",
+                                      "createdAt": 1603317598490,
+                                      "email": "ian@teste171.com",
+                                      "formCompleted": false,
+                                      "isVerified": false,
+                                      "leadToken": "ikjbuqcntpizgicn",
+                                      "name": "Ian Canário",
+                                      "phone": "(75) 99999-9998",
+                                      "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                      "state": "BA",
+                                      "status": 0,
+                                      "statusConvertedWebhook": true,
+                                      "uid": "-MKCAF_J4ICBFG6XxS6H"
+                                    }
+                                  }
+                             </pre>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h4 id="line3_10"> GET - List client leads</h4>
+                            
+                            <pre class="brush: html">
+                                https://us-central1-oqhomapi.cloudfunctions.net/v2/leadsInAction
+                             </pre>
+
+                             <p>Este endpoint permite ler os dados de um lead.</p>
+
+
+                             <h5>Request</h5>
+                             <p>BODY</p>
+
+                             <pre class="brush: html">
+                                {
+                                    "search":{
+                                      "email": "alexia@teste.com"
+                                    }
+                                  }
+                            </pre>
+
+                             <h5>Response</h5>
+
+                             <p>BODY</p>
+                             <pre class="brush: html">
+                                {
+                                    "code": 200,
+                                    "success": true,
+                                    "message": "Leads encontrado com sucesso",
+                                    "data": {
+                                      "-MI5S0wt32P_ZO2NjfI9": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Teste "
+                                        },
+                                        "actionId": "-MI4RYik1wfidF6dQlOs",
+                                        "city": "Brasiléia",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "547.654.654-65",
+                                        "createdAt": 1601057329430,
+                                        "email": "aaa@e.com.br",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "gx6rsilgmo9h88rs",
+                                        "name": "teste alexia",
+                                        "phone": "(45) 64654-6546",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MI5S0wt32P_ZO2NjfI9"
+                                      },
+                                      "-MI5ZDBAfIsDnDT0Gmpl": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Teste "
+                                        },
+                                        "actionId": "-MI4RYik1wfidF6dQlOs",
+                                        "city": "Brasiléia",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "576.546.546-54",
+                                        "createdAt": 1601059209664,
+                                        "email": "aaaa@e.com.br",
+                                        "isVerified": false,
+                                        "leadToken": "627316fclk276blc",
+                                        "name": "teste alexia 2",
+                                        "phone": "(45) 64654-6555",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MI5ZDBAfIsDnDT0Gmpl"
+                                      },
+                                      "-MIU-HYKyAm6hXJ7BKFM": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MITy3SG1R7KwVtuVeNA",
+                                        "city": "Anagé",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "123.456.789-00",
+                                        "createdAt": 1601469228651,
+                                        "email": "rsantoslfap@gmail.com",
+                                        "formCompleted": true,
+                                        "isVerified": false,
+                                        "leadToken": "2meteu10291e02hk",
+                                        "name": "Rafael Santos Laborda Fernandes",
+                                        "phone": "(71) 98337-3938",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "BA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MIU-HYKyAm6hXJ7BKFM"
+                                      },
+                                      "-MJi31lg7i4ddTiKN3bB": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MJi2lfProNQCl7WEQTZ",
+                                        "city": "Santa Rosa do Purus",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "564.231.324-69",
+                                        "createdAt": 1602795613262,
+                                        "email": "testestatus@teste.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "i309b6dfa01io0dm",
+                                        "name": "alexia",
+                                        "phone": "(65) 46513-2132",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "AC",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJi31lg7i4ddTiKN3bB"
+                                      },
+                                      "-MJi412U7bFV9nJZBNRM": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MJi2lfProNQCl7WEQTZ",
+                                        "city": "Antônio Olinto",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "212.341.234-12",
+                                        "createdAt": 1602795871933,
+                                        "email": "hhh@i.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "7eool1n8ydgdxcg3",
+                                        "name": "tewt",
+                                        "phone": "(54) 32345-2345",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "PR",
+                                        "status": 3,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJi412U7bFV9nJZBNRM"
+                                      },
+                                      "-MJi4M3LC03Qe7I1tfES": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "teste"
+                                        },
+                                        "actionId": "-MJi2lfProNQCl7WEQTZ",
+                                        "city": "Antônio Olinto",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": true,
+                                        "cpf": "212.412.344-56",
+                                        "createdAt": 1602795958014,
+                                        "email": "hhhh@i.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "43ek8gjdqzlykmvt",
+                                        "name": "tewt",
+                                        "phone": "(54) 32342-3452",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "PR",
+                                        "status": 3,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MJi4M3LC03Qe7I1tfES"
+                                      },
+                                      "-MKCAF_J4ICBFG6XxS6H": {
+                                        "acceptedTerms": true,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Salvador",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "000.000.171-00",
+                                        "createdAt": 1603317598490,
+                                        "email": "ian@teste171.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "ikjbuqcntpizgicn",
+                                        "name": "Ian Canário",
+                                        "phone": "(75) 99999-9999",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "BA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKCAF_J4ICBFG6XxS6H"
+                                      },
+                                      "-MKa5Q0qV8ehKvLnmjqY": {
+                                        "acceptedTerms": false,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Barra do Corda",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "614.228.343-10",
+                                        "createdAt": 1603735760195,
+                                        "email": "testandonome@teste.com",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "29bnbbinqppgjl8m",
+                                        "name": "Testandonome",
+                                        "phone": "(12) 345-6789",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "MA",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKa5Q0qV8ehKvLnmjqY"
+                                      },
+                                      "-MKa7Afdpd8581deDc1i": {
+                                        "acceptedTerms": false,
+                                        "action": {
+                                          "actionTitle": "Vitta concretiza seu sonho"
+                                        },
+                                        "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                        "city": "Anchieta",
+                                        "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                        "converted": false,
+                                        "cpf": "",
+                                        "createdAt": 1603736221662,
+                                        "email": "",
+                                        "formCompleted": false,
+                                        "isVerified": false,
+                                        "leadToken": "eag2rkj8pe85anps",
+                                        "name": "",
+                                        "phone": "",
+                                        "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                        "state": "ES",
+                                        "status": 0,
+                                        "statusConvertedWebhook": true,
+                                        "uid": "-MKa7Afdpd8581deDc1i"
+                                      }
+                                    }
+                                  }
+                             </pre>
+                        </div>
+                    </section>
+                    <!-- end section -->
+
+                    <!-- <section id="line4" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Necessary Plugins <hr></h2>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="images/upload/plugin1.png" alt="" class="img-responsive img-thumbnail">
+                                <h4>Plugin name #1</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                            </div>
+                            
+
+                            <div class="col-md-4">
+                                <img src="images/upload/plugin2.png" alt="" class="img-responsive img-thumbnail">
+                                <h4>Plugin name #2</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                            </div>
+                            
+
+                            <div class="col-md-4">
+                                <img src="images/upload/plugin3.png" alt="" class="img-responsive img-thumbnail">
+                                <h4>Plugin name #3</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                            </div>
+                            
+
+                            <div class="col-md-12">
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+
+                                <div class="text-center">
+                                    <a href="#" class="btn btn-primary">Get a Installation Service</a> <a href="#" class="btn btn-info">Ask a Question</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </section>
+                    
+
+                    <section id="line5" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Creating Blog Pages <hr></h2>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4 id="line5_1">WordPress Blog Page -</h4>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4 id="line5_2">Blog Post Sections -</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4 id="line5_3">Create Blog Gallery -</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+                            
+
+                        </div>
+                        
+
+                    </section>
+                    
+
+                    <section id="line6" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">How to Install Revolution Slider <hr></h2>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4>Installation Slider</h4>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+                            
+
+                            <div class="col-md-6">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                                <h4>Updating Slider</h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
+                                <ul>
+                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
+                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
+                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
+                                </ul>
+                            </div>
+                            
+
+                        </div>
+                        
+
+                    </section>
+                    
+
+                    <section id="line7" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">How to Use Option Panel <hr></h2>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_1">General Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_2">Style Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <hr>
+
+                        <!-- <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_3">Header Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_4">Font Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_5">Slider Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_6">Page Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                           
+                        </div>
+                       
+
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
+                            </div>
+
+                            <div class="col-md-8">
+                                <h4 id="line7_7">Import & Export Options - </h4>
+                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
+                            </div>
+                            
+                        </div>
+                        
+
+                    </section> -->
+                    
+
+                    <!-- 
+                    <section id="line8" class="section">
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Support Desk <hr></h2>
+                            </div>
+                           
+                        </div>
+                      
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Please remember you have purchased a very affordable theme and you have not paid for a full-time web design agency. Occasionally we will help with small tweaks, but these requests will be put on a lower priority due to their nature. Support is also 100% optional and we provide it for your connivence, so please be patient, polite and respectful.</p>
+
+                                <p>Please visit our <a href="http://themeforest.net/user/yourusername"><strong>profile page</strong></a> or ask question <a href="mailto:yourusername@gmail.com">@yourusername</a></p>
+
+                                <strong>Support for my items includes:</strong>
+                                <ul>
+                                    <li>* Responding to questions or problems regarding the item and its features</li>
+                                    <li>* Fixing bugs and reported issues</li>
+                                    <li>* Providing updates to ensure compatibility with new software versions</li>
+                                </ul>
+                                <strong>Item support does not include:</strong>
+                                <ul>
+                                    <li>* Customization and installation services</li>
+                                    <li>* Support for third party software and plug-ins</li>
+                                </ul>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <strong>Before seeking support, please...</strong>
+                                <ul>
+                                    <li>* Make sure your question is a valid Theme Issue and not a customization request.</li>
+                                    <li>* Make sure you have read through the documentation and any related video guides before asking support on how to accomplish a task.</li>
+                                    <li>* Make sure to double check the theme FAQs.</li>
+                                    <li>* Try disabling any active plugins to make sure there isn't a conflict with a plugin. And if there is this way you can let us know.</li>
+                                    <li>* If you have customized your theme and now have an issue, back-track to make sure you didn't make a mistake. If you have made changes and can't find the issue, please provide us with your changelog.</li>
+                                    <li>* Almost 80% of the time we find that the solution to people's issues can be solved with a simple "Google Search". You might want to try that before seeking support. You might be able to fix the issue yourself much quicker than we can respond to your request.</li>
+                                    <li>* Make sure to state the name of the theme you are having issues with when requesting support via ThemeForest.</li>
+                                </ul>
+                            </div>
+                        </div>
+                     
+
+                    </section>
+                     -->
+
+                    <!-- <section id="line9" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Files & Sources <hr></h2>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Included Stylesheets</strong>
+
+                                <p>These are the primary CSS files used for general front-end styling. Use these to customize your theme even further. All included JavaScript codes under <strong>yourthemename/css/</strong></p>
+
+                                <ul>
+                                    <li>1. style.css - Primary stylesheet</li>
+                                    <li>2. bootstrap.css - Bootstrap stylesheet</li>
+                                    <li>3. owl-carousel.css - OWL Carousel</li>
+                                    <li>4. fontawesome.css - FontAwesome Font Icons stylesheet</li>
+                                    <li>5. custom.css - Pathos Color Schemes stylesheet</li>
+                                    <li>6. prettyPhoto.css - Lightbox effect css file</li>
+                                    <li>7. flexslider.css - Flexslider css file</li>
+                                    <li>8. et-line.css - Elegant icons css file</li>
+                                    <li>9. carousel.css - OWL Carousel css file</li>
+                                    <li>10. animate.css - CSS3 animations css file</li>
+                                </ul>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                <strong>Included JavaScript</strong>
+
+                                <p>These are the various attribution inks to the Javascript files included or modified to work with in this theme. All included JavaScript codes under <strong>yourthemename/js/</strong></p>
+
+                                <ul>
+                                    <li>1. bootstrap.js - Bootstrap JavaScript</li>
+                                    <li>2. custom.js - All JavaScript Plugins</li>
+                                    <li>3. retina.js - Retina JavaScript</li>
+                                    <li>4. jquery.js - Base JavaScript</li>
+                                    <li>5. prettyPhoto.js - Lightbox JavaScript</li>
+                                    <li>6. owl-carousel.js - Lightbox JavaScript</li>
+                                    <li>7. revslider.js - Revolution Slider JavaScript</li>
+                                    <li>8. flexslider.js - Flexslider JavaScript</li>
+                                    <li>9. awesome-grid.nin.js - Awesome grid portfolio JavaScript</li>
+                                    <li>10. circle.js - Coming soon page JavaScript</li>
+                                    <li>11. contact.js - Contact form validate JavaScript</li>
+                                    <li>12. isotope.js - Masonry Portfolio JavaScript</li>
+                                    <li>13. progress.js - Progress bar JavaScript</li>
+                                    <li>14. rotate.js - Text rotate effect JavaScript</li>
+                                    <li>15. wow.js - CSS3 animation JavaScript</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+                    </section>
+                   -->
+
+                    <!-- <section id="line10" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Version History (Changelog) <hr></h2>
+                            </div>
+                            
+                        </div>
+                        
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <p>You can find the version history (changelog.txt) file on <strong>yourthemename-full.zip</strong> folder or you can check changelog on theme sale page.</p>
+                                <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+
+                                <hr>
+
+                                <h4>Changelog</h4>
+
+                                <pre class="brush: html">
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 3.8.4 - May 7th, 2015
+                                        -----------------------------------------------------------------------------------------
+
+                                        - new revolution slider plugin version
+                                        - fixed security issue with xss vulnerability
+                                        - improved demo importer for certain server environments
+                                        - updated WooCommerce template files for the outdated message in system status
+                                        - added suhosin check in system status 
+                                        - added information that explains ZipArchive is required on your server for importing demos 
+                                        - portfolio Grid template improvement
+                                        - added more information to demo popup message for individual demo requirements
+                                        - RTL style improvements
+                                        - breadcrumb function improved for various areas
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 3.8.3 - May 7th, 2015
+                                        -----------------------------------------------------------------------------------------
+                                        - fixed responsive / retina issue for larger logos
+                                        - fusion slider now uses responsive headings all the time
+                                        - dropped custom Avada styles for select boxes in IE since it is not supported
+                                        - fixed compatibility issue with Category Order and Taxonomy Terms Order plugin
+                                        - fixed issue of full width background being affected by padding options
+                                        - tested and fixed hellobar issue 
+                                        - typography settings now apply to single post pages
+                                        - improved smooth scroll in certain situations
+                                        - youtube & vimeo videos will show at normal size in light box as long as video embed link is not used
+                                        - fixed issue of â€œfixedâ€ featured image mode not working for carousels / recent work
+                                        - fixed issue of header tagline font not working with font options
+
+                                        -----------------------------------------------------------------------------------------
+                                        Version 3.8.2 - May 7th, 2015
+                                        -----------------------------------------------------------------------------------------
+                                        - fixed formatting issues with Turkish language files 
+                                        - letter spacing menu option improvement
+                                        - improved fusion slider max content width setting
+                                        - removed the â€œdisable first featured image on productsâ€ setting since it does not apply
+                                        - improved portfolio featured image loading
+                                        - removed encoding from tracking code, space before head, space before body, and custom CSS to stop it from parsing code within TO and removing special characters e.g. +
+                                        - woo login box now shows login fields for logged out users
+                                        - woo cart / my account links now show on mobile 
+                                        - fixed button styling issue with gravity forms
+
+
+                                      </pre>
+
+                            </div>
+                        </div>
+                    
+
+                    </section>
+                     -->
+
+                    <!-- <section id="line11" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Copyright and license <hr></h2>
+                            </div>
+                            
+                        </div>
+                    
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <p>Code released under the <a href="#" target="_blank">Un License</a> License.</p>                        
+                                <p>For more information about copyright and license check <a href="https://choosealicense.com/" target="_blank">choosealicense.com</a>.</p>
+                            
+                            </div>
+                        </div>
+                        
+
+                    </section> -->
+                    
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>
