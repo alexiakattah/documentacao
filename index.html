@@ -113,7 +113,7 @@
                             <li><a href="#line1">Introdução</a></li>
                             <li><a href="#line2">Auth</a>
                                 <ul class="nav">
-                                    <li><a href="#line2_a">Gerando um token de acesso</a></li>
+                                    <li><a href="#line2_1">Gerando um token de acesso</a></li>
                                     <li><a href="#line2_2">Refresh Token</a></li>
                                 </ul>
                             </li>
@@ -129,28 +129,30 @@
                                     <li><a href="#line3_8">List number leads per state</a></li>
                                     <li><a href="#line3_9">Lead data</a></li>
                                     <li><a href="#line3_10">List client leads</a></li>
-                                    <!-- <li><a href="#line3_10">Update lead</a></li> -->
-                                    <!-- <li><a href="#line3_11">Delete lead</a></li>   -->
+                                    <li><a href="#line3_11">Update lead</a></li>
+                                    <li><a href="#line3_12">Delete lead</a></li>  
                                 </ul>
                             </li>
-                            <!-- <li><a href="#line4">Necessary Plugins</a></li>
-                            <li><a href="#line5">Creating Blog Pages</a></li>
-                            <li><a href="#line6">Revolution Slider</a></li>
-                            <li><a href="#line7">How to Use Option Panel</a>
-                                <ul class="nav">
-                                    <li><a href="#line7_1">General Options</a></li>
-                                    <li><a href="#line7_2">Style Options</a></li>
-                                    <li><a href="#line7_3">Header Options</a></li>
-                                    <li><a href="#line7_4">Font Options</a></li>
-                                    <li><a href="#line7_5">Slider Options</a></li>
-                                    <li><a href="#line7_6">Page Options</a></li>
-                                    <li><a href="#line7_7">Import & Export</a></li>
-                                </ul>
+                            <li><a href="#line4">Players</a>
+                              <ul class="nav">
+                                <li><a href="#line4_1">Create Player</a></li>
+                                <li><a href="#line4_2">Update Player</a></li>
+                                <li><a href="#line4_3">List player action</a></li>
+                                <li><a href="#line4_4">Delete player</a></li>
+                                <li><a href="#line4_5">Player data</a></li>
+                                <li><a href="#line4_6">Player Ranking</a></li>
+                                <li><a href="#line4_7">List players</a></li>
+                              </ul>
                             </li>
-                            <li><a href="#line8">Support Desk</a></li>
-                            <li><a href="#line9">Files & Sources</a></li>
-                            <li><a href="#line10">Version History (Changelog)</a></li>
-                            <li><a href="#line11">Copyright and license</a></li> -->
+
+                            <li><a href="#line5">Counts</a>
+                              <ul class="nav">
+                                <li><a href="#line5_1">Percent Engagement </a></li>
+                                <li><a href="#line5_2"> All SharesCount </a></li>
+                                <li><a href="#line5_3"> List all pageviews </a></li>
+                                <li><a href="#line5_4"> List All Conversions </a></li>
+                              </ul>
+                            </li>
                         </ul>
                     </nav >
                 </div>
@@ -242,7 +244,7 @@
                         <p>Nesta sessão iremos apresentar a forma de adquirir as chaves de acesso (token) à nossa api, <br/> necessário para a utilização em todas as chamadas.</p>
 
                         <div class="col-md-12">
-                            <h4 id="line2_a">POST - Autenticação - Gerando um token de acesso</h4>
+                            <h4 id="line2_1">POST - Autenticação - Gerando um token de acesso</h4>
 
                             <pre class="brush: html">
                                 https://us-central1-oqhomapi.cloudfunctions.net/v2/signIn
@@ -313,9 +315,6 @@
                                 </pre>
                             
                             </div>
-                            
-                            
-                        
                         </section>
                     <!-- end section -->
 
@@ -1475,456 +1474,1575 @@
                                   }
                              </pre>
                         </div>
+
+                        <div class="col-md-12">
+                          <h4 id="line3_11"> PUT - Update lead </h4>
+                          
+                          <pre class="brush: html">
+                            https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/update
+                           </pre>
+
+                           <p>Este endpoint permite fazer a atualização dos dados de um lead.</p>
+
+
+                           <h5>Request</h5>
+                           <p>BODY</p>
+
+                           <pre class="brush: html">
+                            {
+                              "validationCode": "VALIDATIONCODE",
+                              "search": {
+                                "email": "ian@teste171.com"
+                              },
+                              
+                              "lead": {
+                                "name": "Ian Canário",
+                                "phone": "(75) 99999-9998",
+                                "email": "ian@teste171.com",
+                                "cpf": "000.000.171-00",
+                                "state": "BA",
+                                "city": "Salvador",
+                                "acceptedTerms": true,
+                                "converted": false
+                              }
+                            }
+                          </pre>
+
+                           <h5>Response</h5>
+
+                           <p>BODY</p>
+                           <pre class="brush: html">
+                            {
+                              "code": 200,
+                              "success": true,
+                              "message": "Lead atualizado com sucesso",
+                              "data": {
+                                "acceptedTerms": true,
+                                "action": {
+                                  "actionTitle": "Ação escolhida"
+                                },
+                                "actionId": "-MIssMOR-bl9Bm1lEXe5",
+                                "city": "Salvador",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "converted": false,
+                                "cpf": "000.000.171-00",
+                                "createdAt": 1603317598490,
+                                "email": "ian@teste171.com",
+                                "formCompleted": false,
+                                "isVerified": false,
+                                "leadToken": "ikjbuqcntpizgicn",
+                                "name": "Ian Canário",
+                                "phone": "(75) 99999-9998",
+                                "playerId": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                                "state": "BA",
+                                "status": 0,
+                                "statusConvertedWebhook": true,
+                                "uid": "-MKCAF_J4ICBFG6XxS6H"
+                              }
+                            }
+                           </pre>
+                      </div>
+
+                      <div class="col-md-12">
+                        <h4 id="line3_12"> DEL - Delete lead </h4>
+                        
+                        <pre class="brush: html">
+                          https://us-central1-oqhomapi.cloudfunctions.net/v2/lead/delete
+                         </pre>
+
+                         <p>Este endpoint permite deletar um lead.</p>
+
+
+                         <h5>Request</h5>
+                         <p>BODY</p>
+
+                         <pre class="brush: html">
+                          {
+                            "search": {
+                              "cpf": "000.000.000-00"
+                            }
+                            "validationCode":"VALIDATIONCODE",
+                        </pre>
+
+                         <h5>Response</h5>
+
+                         <p>BODY</p>
+                         <pre class="brush: html">
+                          {
+                            "code": 200,
+                            "success": true,
+                            "message": "Lead Excluido"
+                          }
+
+                         </pre>
+                    </div>
+
+
                     </section>
                     <!-- end section -->
 
-                    <!-- <section id="line4" class="section">
+                     <section id="line4" class="section">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Necessary Plugins <hr></h2>
+                                <h2 class="dark-text">Player <hr></h2>
                             </div>
-                            
-                        </div>
+                          </div>
+                          <p>A seguir os endpoints para manipulação de players.</p>
                         
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="images/upload/plugin1.png" alt="" class="img-responsive img-thumbnail">
-                                <h4>Plugin name #1</h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                            </div>
-                            
+                        <div class="col-md-12">
+                          <h4 id="line4_1"> POST - Create Player </h4>
+                          
+                          <pre class="brush: html">
+                            https://us-central1-oqhomapi.cloudfunctions.net/v2/player/create
+                          </pre>
 
-                            <div class="col-md-4">
-                                <img src="images/upload/plugin2.png" alt="" class="img-responsive img-thumbnail">
-                                <h4>Plugin name #2</h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                            </div>
-                            
+                           <p>Este endpoint permite criação de um lovo player.</p>
 
-                            <div class="col-md-4">
-                                <img src="images/upload/plugin3.png" alt="" class="img-responsive img-thumbnail">
-                                <h4>Plugin name #3</h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                            </div>
-                            
 
-                            <div class="col-md-12">
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                           <h5>Request</h5>
+                           <p>BODY</p>
 
-                                <div class="text-center">
-                                    <a href="#" class="btn btn-primary">Get a Installation Service</a> <a href="#" class="btn btn-info">Ask a Question</a>
-                                </div>
-                            </div>
-                        </div>
+                           <pre class="brush: html">
+                            {
+                              "player": {
+                                "name": "Nome Completo",
+                                "email": "email@email.com",
+                                "cpf":"111.111.111-11",
+                                "password":"123456",
+                                "confirmPassword":"123456"
+                              }
+                            }
+                          </pre>
+
+                           <h5>Response</h5>
+
+                           <p>BODY</p>
+                           <pre class="brush: html">
+                            {
+                              "code": 200,
+                              "success": true,
+                              "message": "Conta criada com sucesso!",
+                              "data": {
+                                "name": "NOME COMPLETO",
+                                "email": "email@email.com",
+                                "cpf": "111.111.111-11",
+                                "clientId": "1ywXr0SjklYA2cvUTIbrqmVUpqC2",
+                                "uid": "gKjkTa0RShWd5SMrWYX9Ml11Gpx1",
+                                "emailVerified": false,
+                                "createdAt": 1594750012519,
+                                "active": true
+                              }
+                            }
+                           </pre>
+                      </div>
+
+                      <div class="col-md-12">
+                        <h4 id="line4_2"> PUT - Update Player </h4>
                         
+                        <pre class="brush: html">
+                          https://us-central1-oqhomapi.cloudfunctions.net/v2/player/update
+                        </pre>
 
-                    </section>
+                         <p>Este endpoint permite a alteração dos dados de um player.</p>
+
+
+                         <h5>Request</h5>
+                         <p>BODY</p>
+
+                         <pre class="brush: html">
+                          {	
+                            "search":{
+                              "cpf": "897.985.845-64"
+                            },
+                            "player":{
+                              "name": "Alexia Kattah",
+                              "phoneNumber": "37999551241",
+                              "city": "Belo Horizonte",
+                              "state": "MG",
+                              "cpf": "541.845.897-55"
+                            }
+                          }
+                        </pre>
+
+                         <h5>Response</h5>
+
+                         <p>BODY</p>
+                         <pre class="brush: html">
+                          {
+                            "code": 200,
+                            "message": "Atualização concluida com sucesso!",
+                            "success": true,
+                            "data": {
+                              "AccountData": {
+                                "agency": "4444",
+                                "bank": "237",
+                                "conta": "44444444",
+                                "cpf": "090.909.089-08",
+                                "name": "Alexia Karoline Xavier Lopes Kattah",
+                                "numberPis": "56458574987987"
+                              },
+                              "acceptedTerms": true,
+                              "actions": [
+                                "-MI4RYik1wfidF6dQlOs",
+                                "-MGseoOZ4pHMqcBJnbL1",
+                                "-MITy3SG1R7KwVtuVeNA",
+                                "-MIssMOR-bl9Bm1lEXe5",
+                                "-MJi2lfProNQCl7WEQTZ",
+                                "-MJHyzQiWupK4kVdNobX"
+                              ],
+                              "actionsCount": 6,
+                              "actionsEngaged": {
+                                "-MITy3SG1R7KwVtuVeNA": {
+                                  "actionShares": 2
+                                },
+                                "-MIssMOR-bl9Bm1lEXe5": {
+                                  "actionShares": 14
+                                },
+                                "-MJHyzQiWupK4kVdNobX": {
+                                  "actionShares": 1
+                                },
+                                "-MJi2lfProNQCl7WEQTZ": {
+                                  "actionShares": 3
+                                }
+                              },
+                              "active": true,
+                              "birthDate": "1997-05-12",
+                              "city": "Belo Horizonte",
+                              "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                              "clientName": "testesemgame",
+                              "confirmEmail": "alexia@teste.com",
+                              "cpf": "541.845.897-55",
+                              "createdAt": 1601057023889,
+                              "deliverAddress": {
+                                "cep": "",
+                                "city": "",
+                                "complement": "",
+                                "neighborhood": "",
+                                "number": "",
+                                "state": "",
+                                "street": ""
+                              },
+                              "email": "alexia@teste.com",
+                              "emailVerified": false,
+                              "fcmToken": "c1DID46rnR8QRG1kGpraYC:APA91bHo59DMQY6yXn661y5dGzJfeLr5pl2Hjb4vPwJUJKhRtuDAN23aIpmJO9_3n2D7Ho_IbNB5yuYs46pIt7KZQmGC7Ne2N4e3Hn3vT4QP92lHqixsJ1UtmiM0vsUmPWxO28Ly9wwQ",
+                              "leads": 7,
+                              "name": "Alexia Kattah",
+                              "phoneNumber": "37999551241",
+                              "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                              "points": {
+                                "extraPoints": 11000,
+                                "salesConversion": 0
+                              },
+                              "redeemedPoints": 100,
+                              "regional": "apartamento",
+                              "registerCompleted": true,
+                              "state": "RS",
+                              "topics": {
+                                "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                  "fcmToken": "f9WkpYfkvOj77qmdEgW2Cv:APA91bEFjxIafw-lzFd5Ha36JUDx7F0pch0FJ6xwFGMo9bEhyWjRDwJ-XquLN-dpxlcFskeztAcIKvODnjGuHnl8jvVB0SCBt9aWLjPlIevsIn9aQYrXccsm-5_AfHAgnYDGLnd7fCex",
+                                  "subDate": 1603377256837,
+                                  "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                },
+                              
+                         </pre>
+                    </div>
+
+                    <div class="col-md-12">
+                      <h4 id="line4_3"> GET - List players action </h4>
+                      
+                      <pre class="brush: html">
+                        https://us-central1-oqhomapi.cloudfunctions.net/v2/player/getPlayersAction
+                      </pre>
+
+                       <p>Este endpoint permite fazer listagem de todos os players em uma publicação.</p>
+
+
+                       <h5>Request</h5>
+                       <p>BODY</p>
+
+                       <pre class="brush: html">
+                        {    
+                          "search":{
+                              "actionId": "id da ação"
+                          }
+                      }
+                      </pre>
+
+                       <h5>Response</h5>
+
+                       <p>BODY</p>
+                       <pre class="brush: html">
+                        {
+                          "code": 200,
+                          "success": true,
+                          "data": [
+                            {
+                              "jzp5X5fSJLTSF4aTcomqJt0fL1D3": {
+                                "acceptedTerms": true,
+                                "actions": [
+                                  "-MIssMOR-bl9Bm1lEXe5"
+                                ],
+                                "actionsCount": 0,
+                                "active": true,
+                                "birthDate": "1997-05-12",
+                                "city": "Barreiros",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "clientName": "testesemgame",
+                                "confirmEmail": "teste1@teste.com.br",
+                                "cpf": "321.654.698-79",
+                                "createdAt": 1601903189345,
+                                "email": "teste1@teste.com.br",
+                                "emailVerified": false,
+                                "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                "leads": 0,
+                                "name": "teste",
+                                "phoneNumber": "(65) 46879-8798",
+                                "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                                "regional": "apartamento",
+                                "registerCompleted": true,
+                                "state": "PE",
+                                "topics": {
+                                  "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                    "subDate": 1601903232034,
+                                    "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                    "subDate": 1601903232085,
+                                    "topic": "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "STATE_PE_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                    "subDate": 1601903231984,
+                                    "topic": "STATE_PE_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  }
+                                },
+                                "totalPoints": 0,
+                                "uid": "jzp5X5fSJLTSF4aTcomqJt0fL1D3"
+                              }
+                            },
+                            {
+                              "ipyTfBedroYfe4izVV16f8HCoJm1": {
+                                "acceptedTerms": true,
+                                "actions": [
+                                  "-MIssMOR-bl9Bm1lEXe5"
+                                ],
+                                "actionsCount": 0,
+                                "actionsEngaged": {
+                                  "-MIssMOR-bl9Bm1lEXe5": {
+                                    "actionShares": 1
+                                  }
+                                },
+                                "active": true,
+                                "birthDate": "1997-05-12",
+                                "city": "Baía Formosa",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "clientName": "testesemgame",
+                                "confirmEmail": "alexiakattah@gmail.com",
+                                "cpf": "549.879.876-54",
+                                "createdAt": 1601918416963,
+                                "email": "alexiakattah@gmail.com",
+                                "emailVerified": false,
+                                "fcmToken": "c_EjDG2vZv8:APA91bFUUh7kHRPdbvTfU2HH--xwTcm7-H_y8ovtzbpuYYTxvxRDlHFZDE99mq7d5iUmqdwWDrG3SjTdlHlRrRQatO-uMHnDKEUtCQcNwsJMInHI2qoE8q_gXN6x8kJtqeLhp9b_u6Wn",
+                                "leads": 0,
+                                "name": "alexia",
+                                "phoneNumber": "(56) 46987-9879",
+                                "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                                "regional": "apartamento",
+                                "registerCompleted": true,
+                                "state": "RN",
+                                "topics": {
+                                  "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                    "subDate": 1601918461282,
+                                    "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                    "subDate": 1601918460921,
+                                    "topic": "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "STATE_RN_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "evB2sWR43Ew:APA91bGT4PO_9QgZAjMJduJd3Dwn0yV4BoCcIUDVsUbZ4f1mq2FVaaXD4PYoq12DGuoGG9HEI2CEUsKi06sSQQYBDADYjXitNGkxvaVOxqNER8YXMZhy8ShdH6u5M4ONRBrja1TJE3aI",
+                                    "subDate": 1601918460915,
+                                    "topic": "STATE_RN_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  }
+                                },
+                                "totalPoints": 0,
+                                "uid": "ipyTfBedroYfe4izVV16f8HCoJm1"
+                              }
+                            },
+                            {
+                              "8KVXyRlnRddAJk8YnC14H9slaTv1": {
+                                "AccountData": {
+                                  "agency": "4444",
+                                  "bank": "237",
+                                  "conta": "44444444",
+                                  "cpf": "090.909.089-08",
+                                  "name": "Alexia Karoline Xavier Lopes Kattah",
+                                  "numberPis": "56458574987987"
+                                },
+                                "acceptedTerms": true,
+                                "actions": [
+                                  "-MI4RYik1wfidF6dQlOs",
+                                  "-MGseoOZ4pHMqcBJnbL1",
+                                  "-MITy3SG1R7KwVtuVeNA",
+                                  "-MIssMOR-bl9Bm1lEXe5",
+                                  "-MJi2lfProNQCl7WEQTZ",
+                                  "-MJHyzQiWupK4kVdNobX"
+                                ],
+                                "actionsCount": 6,
+                                "actionsEngaged": {
+                                  "-MITy3SG1R7KwVtuVeNA": {
+                                    "actionShares": 2
+                                  },
+                                  "-MIssMOR-bl9Bm1lEXe5": {
+                                    "actionShares": 13
+                                  },
+                                  "-MJHyzQiWupK4kVdNobX": {
+                                    "actionShares": 1
+                                  },
+                                  "-MJi2lfProNQCl7WEQTZ": {
+                                    "actionShares": 3
+                                  }
+                                },
+                                "active": true,
+                                "birthDate": "1997-05-12",
+                                "city": "Anta Gorda",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "clientName": "testesemgame",
+                                "confirmEmail": "alexia@teste.com",
+                                "cpf": "897.985.845-64",
+                                "createdAt": 1601057023889,
+                                "deliverAddress": {
+                                  "cep": "",
+                                  "city": "",
+                                  "complement": "",
+                                  "neighborhood": "",
+                                  "number": "",
+                                  "state": "",
+                                  "street": ""
+                                },
+                                "email": "alexia@teste.com",
+                                "emailVerified": false,
+                                "fcmToken": "c1DID46rnR8QRG1kGpraYC:APA91bHo59DMQY6yXn661y5dGzJfeLr5pl2Hjb4vPwJUJKhRtuDAN23aIpmJO9_3n2D7Ho_IbNB5yuYs46pIt7KZQmGC7Ne2N4e3Hn3vT4QP92lHqixsJ1UtmiM0vsUmPWxO28Ly9wwQ",
+                                "leads": 7,
+                                "name": "alexia",
+                                "phoneNumber": "(54) 54545-4545",
+                                "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                                "points": {
+                                  "extraPoints": 11000,
+                                  "salesConversion": 0
+                                },
+                                "redeemedPoints": 100,
+                                "regional": "apartamento",
+                                "registerCompleted": true,
+                                "state": "RS",
+                                "topics": {
+                                  "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "f9WkpYfkvOj77qmdEgW2Cv:APA91bEFjxIafw-lzFd5Ha36JUDx7F0pch0FJ6xwFGMo9bEhyWjRDwJ-XquLN-dpxlcFskeztAcIKvODnjGuHnl8jvVB0SCBt9aWLjPlIevsIn9aQYrXccsm-5_AfHAgnYDGLnd7fCex",
+                                    "subDate": 1603377256837,
+                                    "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "f9WkpYfkvOj77qmdEgW2Cv:APA91bEFjxIafw-lzFd5Ha36JUDx7F0pch0FJ6xwFGMo9bEhyWjRDwJ-XquLN-dpxlcFskeztAcIKvODnjGuHnl8jvVB0SCBt9aWLjPlIevsIn9aQYrXccsm-5_AfHAgnYDGLnd7fCex",
+                                    "subDate": 1603377256911,
+                                    "topic": "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "STATE_RS_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "f9WkpYfkvOj77qmdEgW2Cv:APA91bEFjxIafw-lzFd5Ha36JUDx7F0pch0FJ6xwFGMo9bEhyWjRDwJ-XquLN-dpxlcFskeztAcIKvODnjGuHnl8jvVB0SCBt9aWLjPlIevsIn9aQYrXccsm-5_AfHAgnYDGLnd7fCex",
+                                    "subDate": 1603377256914,
+                                    "topic": "STATE_RS_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  }
+                                },
+                                "totalPoints": 11000,
+                                "uid": "8KVXyRlnRddAJk8YnC14H9slaTv1"
+                              }
+                            },
+                            false,
+                            {
+                              "u1e9LroNFdRJesxGHnlsusIYJbu2": {
+                                "acceptedTerms": true,
+                                "actions": [
+                                  "-MIssMOR-bl9Bm1lEXe5"
+                                ],
+                                "actionsCount": 0,
+                                "active": true,
+                                "birthDate": "2020-10-06",
+                                "city": "Amontada",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "clientName": "testesemgame",
+                                "confirmEmail": "teste@teste30.com",
+                                "cpf": "000.000.111-11",
+                                "createdAt": 1602098730858,
+                                "email": "teste@teste30.com",
+                                "emailVerified": false,
+                                "fcmToken": "ecD_ExdjxLw:APA91bFxYa4onzMzvz1bAEgyLuPDNnT-ynRvfj4e88Qkh5B66oj94dJ1MTyKnS4g88MvoZTyEu8N7Lx1t_CthfYln7s93s-gZ6Mz9Vi1LmXHhfgc_2T697ycwNNFYWxbKGTKzum3Dg2x",
+                                "leads": 0,
+                                "name": "teste6",
+                                "phoneNumber": "(00) 00000-0000",
+                                "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                                "points": {
+                                  "extraPoints": 10,
+                                  "salesConversion": 0
+                                },
+                                "regional": "sitio",
+                                "registerCompleted": true,
+                                "state": "CE",
+                                "topics": {
+                                  "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "ecD_ExdjxLw:APA91bFxYa4onzMzvz1bAEgyLuPDNnT-ynRvfj4e88Qkh5B66oj94dJ1MTyKnS4g88MvoZTyEu8N7Lx1t_CthfYln7s93s-gZ6Mz9Vi1LmXHhfgc_2T697ycwNNFYWxbKGTKzum3Dg2x",
+                                    "subDate": 1602098828584,
+                                    "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "REGIONAL_SITIO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "ecD_ExdjxLw:APA91bFxYa4onzMzvz1bAEgyLuPDNnT-ynRvfj4e88Qkh5B66oj94dJ1MTyKnS4g88MvoZTyEu8N7Lx1t_CthfYln7s93s-gZ6Mz9Vi1LmXHhfgc_2T697ycwNNFYWxbKGTKzum3Dg2x",
+                                    "subDate": 1602098828402,
+                                    "topic": "REGIONAL_SITIO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "STATE_CE_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "ecD_ExdjxLw:APA91bFxYa4onzMzvz1bAEgyLuPDNnT-ynRvfj4e88Qkh5B66oj94dJ1MTyKnS4g88MvoZTyEu8N7Lx1t_CthfYln7s93s-gZ6Mz9Vi1LmXHhfgc_2T697ycwNNFYWxbKGTKzum3Dg2x",
+                                    "subDate": 1602098828912,
+                                    "topic": "STATE_CE_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  }
+                                },
+                                "totalPoints": 10,
+                                "uid": "u1e9LroNFdRJesxGHnlsusIYJbu2"
+                              }
+                            },
+                            {
+                              "Rw9g0JdrB7YuATgJINzdeae1LN92": {
+                                "acceptedTerms": true,
+                                "actions": [
+                                  "-MIssMOR-bl9Bm1lEXe5"
+                                ],
+                                "actionsCount": 0,
+                                "actionsEngaged": {
+                                  "-MIssMOR-bl9Bm1lEXe5": {
+                                    "actionShares": 1
+                                  }
+                                },
+                                "active": true,
+                                "birthDate": "0432-04-23",
+                                "city": "Avelino Lopes",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "clientName": "testesemgame",
+                                "confirmEmail": "g@g.com",
+                                "cpf": "354.687.987-95",
+                                "createdAt": 1602587177546,
+                                "email": "g@g.com",
+                                "emailVerified": false,
+                                "fcmToken": "c_EjDG2vZv8:APA91bFUUh7kHRPdbvTfU2HH--xwTcm7-H_y8ovtzbpuYYTxvxRDlHFZDE99mq7d5iUmqdwWDrG3SjTdlHlRrRQatO-uMHnDKEUtCQcNwsJMInHI2qoE8q_gXN6x8kJtqeLhp9b_u6Wn",
+                                "leads": 0,
+                                "name": "g",
+                                "phoneNumber": "(35) 34523-4234",
+                                "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                                "points": {
+                                  "extraPoints": 50,
+                                  "salesConversion": 0
+                                },
+                                "regional": "apartamento",
+                                "registerCompleted": true,
+                                "state": "PI",
+                                "topics": {
+                                  "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "c_EjDG2vZv8:APA91bFUUh7kHRPdbvTfU2HH--xwTcm7-H_y8ovtzbpuYYTxvxRDlHFZDE99mq7d5iUmqdwWDrG3SjTdlHlRrRQatO-uMHnDKEUtCQcNwsJMInHI2qoE8q_gXN6x8kJtqeLhp9b_u6Wn",
+                                    "subDate": 1602587241158,
+                                    "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "c_EjDG2vZv8:APA91bFUUh7kHRPdbvTfU2HH--xwTcm7-H_y8ovtzbpuYYTxvxRDlHFZDE99mq7d5iUmqdwWDrG3SjTdlHlRrRQatO-uMHnDKEUtCQcNwsJMInHI2qoE8q_gXN6x8kJtqeLhp9b_u6Wn",
+                                    "subDate": 1602587241180,
+                                    "topic": "REGIONAL_APARTAMENTO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "STATE_PI_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "c_EjDG2vZv8:APA91bFUUh7kHRPdbvTfU2HH--xwTcm7-H_y8ovtzbpuYYTxvxRDlHFZDE99mq7d5iUmqdwWDrG3SjTdlHlRrRQatO-uMHnDKEUtCQcNwsJMInHI2qoE8q_gXN6x8kJtqeLhp9b_u6Wn",
+                                    "subDate": 1602587241153,
+                                    "topic": "STATE_PI_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  }
+                                },
+                                "totalPoints": 50,
+                                "uid": "Rw9g0JdrB7YuATgJINzdeae1LN92"
+                              }
+                            },
+                            {
+                              "7RBtoUUV9gNQPaUO4iHmJv81J3y2": {
+                                "acceptedTerms": true,
+                                "actions": [
+                                  "-MIssMOR-bl9Bm1lEXe5"
+                                ],
+                                "actionsCount": 0,
+                                "actionsEngaged": {
+                                  "-MIssMOR-bl9Bm1lEXe5": {
+                                    "actionShares": 1
+                                  },
+                                  "-MKAf6M6GtyGI8nuLe4H": {
+                                    "actionShares": 1
+                                  }
+                                },
+                                "active": true,
+                                "birthDate": "2020-09-24",
+                                "city": "Água Branca",
+                                "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                                "clientName": "testesemgame",
+                                "confirmEmail": "ian.canario@oqvocequer.com",
+                                "cpf": "000.000.000-00",
+                                "createdAt": 1601039581947,
+                                "email": "ian.canario@oqvocequer.com",
+                                "emailVerified": false,
+                                "fcmToken": "e3k9HvVbW0WPPaGEt2jSsz:APA91bG-uEDUiESaFbHA8GkNwn1YfYM0VKYQ3Is7mFsC1s_UNURGTxQTCH5EE4YJr-HKl2Tm3CZPz-I5NP2UEj-PPUbAMyppRPkUdcS4KEmxf5XtkeNk2kuqI-gquLvNkFIe1jtF2uf_",
+                                "leads": 0,
+                                "name": "Ian",
+                                "phoneNumber": "(00) 00000-0000",
+                                "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                                "regional": "sitio",
+                                "registerCompleted": true,
+                                "state": "AL",
+                                "topics": {
+                                  "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "eeHTSl4Uoyg:APA91bHbk3azovCW9ZvkEeF2qmZbyY6N_BiciRHg0wW1qf5Wqhz1g-3QNp7e2S-h5TMaUzz9CZZvKmuk9aWZJ0hVjuiJnEHde5N_3KPaZl4LCVAgObp6HhfvEBO0zBw0yq3DJZJfKcFV",
+                                    "subDate": 1601039645364,
+                                    "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "REGIONAL_SITIO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "eeHTSl4Uoyg:APA91bHbk3azovCW9ZvkEeF2qmZbyY6N_BiciRHg0wW1qf5Wqhz1g-3QNp7e2S-h5TMaUzz9CZZvKmuk9aWZJ0hVjuiJnEHde5N_3KPaZl4LCVAgObp6HhfvEBO0zBw0yq3DJZJfKcFV",
+                                    "subDate": 1601039644867,
+                                    "topic": "REGIONAL_SITIO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  },
+                                  "STATE_AL_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                                    "fcmToken": "eeHTSl4Uoyg:APA91bHbk3azovCW9ZvkEeF2qmZbyY6N_BiciRHg0wW1qf5Wqhz1g-3QNp7e2S-h5TMaUzz9CZZvKmuk9aWZJ0hVjuiJnEHde5N_3KPaZl4LCVAgObp6HhfvEBO0zBw0yq3DJZJfKcFV",
+                                    "subDate": 1601039644882,
+                                    "topic": "STATE_AL_lxq3XprR3VarSdVol64ZRRf77QD2"
+                                  }
+                                },
+                                "totalPoints": 0,
+                                "uid": "7RBtoUUV9gNQPaUO4iHmJv81J3y2"
+                              }
+                            }
+                          ]
+                        }
+                       </pre>
+                  </div>
+
+                  <div class="col-md-12">
+                    <h4 id="line4_4"> DEL - Delete Player </h4>
+                    
+                    <pre class="brush: html">
+                      https://us-central1-oqhomapi.cloudfunctions.net/v2/player/delete
+                    </pre>
+
+                     <p>Este endpoint permite deletar um player.</p>
+
+
+                     <h5>Request</h5>
+                     <p>BODY</p>
+
+                     <pre class="brush: html">
+                      {
+                        "search": {
+                          "cpf": "000.000.000-00"
+                        }
+                        "validationCode":"VALIDATIONCODE",
+                    </pre>
+
+                     <h5>Response</h5>
+
+                     <p>BODY</p>
+                     <pre class="brush: html">
+                      {
+                        "code": 200,
+                        "success": true,
+                        "message": "Usuario excluido"
+                      }
+                     </pre>
+                </div>
+
+                <div class="col-md-12">
+                  <h4 id="line4_5"> GET - Player data</h4>
+                  
+                  <pre class="brush: html">
+                    https://us-central1-oqhomapi.cloudfunctions.net/v2/player/getPlayer
+                  </pre>
+
+                   <p>Este endpoint permite ler os dados de um player.</p>
+
+
+                   <h5>Request</h5>
+                   <p>BODY</p>
+
+                   <pre class="brush: html">
+                    {    
+                      "search":{
+                          "email": "ian.canario@oqvocequer.com"
+                      }
+                  }
+                  </pre>
+
+                   <h5>Response</h5>
+
+                   <p>BODY</p>
+                   <pre class="brush: html">
+                    {
+                      "code": 200,
+                      "success": true,
+                      "message": "Player encontrado",
+                      "data": {
+                        "7RBtoUUV9gNQPaUO4iHmJv81J3y2": {
+                          "acceptedTerms": true,
+                          "actions": [
+                            "-MIssMOR-bl9Bm1lEXe5"
+                          ],
+                          "actionsCount": 0,
+                          "actionsEngaged": {
+                            "-MIssMOR-bl9Bm1lEXe5": {
+                              "actionShares": 1
+                            },
+                            "-MKAf6M6GtyGI8nuLe4H": {
+                              "actionShares": 1
+                            }
+                          },
+                          "active": true,
+                          "birthDate": "2020-09-24",
+                          "city": "Água Branca",
+                          "clientId": "lxq3XprR3VarSdVol64ZRRf77QD2",
+                          "clientName": "testesemgame",
+                          "confirmEmail": "ian.canario@oqvocequer.com",
+                          "cpf": "000.000.000-00",
+                          "createdAt": 1601039581947,
+                          "email": "ian.canario@oqvocequer.com",
+                          "emailVerified": false,
+                          "fcmToken": "e3k9HvVbW0WPPaGEt2jSsz:APA91bG-uEDUiESaFbHA8GkNwn1YfYM0VKYQ3Is7mFsC1s_UNURGTxQTCH5EE4YJr-HKl2Tm3CZPz-I5NP2UEj-PPUbAMyppRPkUdcS4KEmxf5XtkeNk2kuqI-gquLvNkFIe1jtF2uf_",
+                          "leads": 0,
+                          "name": "Ian",
+                          "phoneNumber": "(00) 00000-0000",
+                          "photoURL": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "regional": "sitio",
+                          "registerCompleted": true,
+                          "state": "AL",
+                          "topics": {
+                            "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                              "fcmToken": "eeHTSl4Uoyg:APA91bHbk3azovCW9ZvkEeF2qmZbyY6N_BiciRHg0wW1qf5Wqhz1g-3QNp7e2S-h5TMaUzz9CZZvKmuk9aWZJ0hVjuiJnEHde5N_3KPaZl4LCVAgObp6HhfvEBO0zBw0yq3DJZJfKcFV",
+                              "subDate": 1601039645364,
+                              "topic": "NATIONAL_BR_lxq3XprR3VarSdVol64ZRRf77QD2"
+                            },
+                            "REGIONAL_SITIO_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                              "fcmToken": "eeHTSl4Uoyg:APA91bHbk3azovCW9ZvkEeF2qmZbyY6N_BiciRHg0wW1qf5Wqhz1g-3QNp7e2S-h5TMaUzz9CZZvKmuk9aWZJ0hVjuiJnEHde5N_3KPaZl4LCVAgObp6HhfvEBO0zBw0yq3DJZJfKcFV",
+                              "subDate": 1601039644867,
+                              "topic": "REGIONAL_SITIO_lxq3XprR3VarSdVol64ZRRf77QD2"
+                            },
+                            "STATE_AL_lxq3XprR3VarSdVol64ZRRf77QD2": {
+                              "fcmToken": "eeHTSl4Uoyg:APA91bHbk3azovCW9ZvkEeF2qmZbyY6N_BiciRHg0wW1qf5Wqhz1g-3QNp7e2S-h5TMaUzz9CZZvKmuk9aWZJ0hVjuiJnEHde5N_3KPaZl4LCVAgObp6HhfvEBO0zBw0yq3DJZJfKcFV",
+                              "subDate": 1601039644882,
+                              "topic": "STATE_AL_lxq3XprR3VarSdVol64ZRRf77QD2"
+                            }
+                          },
+                          "totalPoints": 0,
+                          "uid": "7RBtoUUV9gNQPaUO4iHmJv81J3y2"
+                        }
+                      }
+                    }
+                   </pre>
+              </div>
+
+              <div class="col-md-12">
+                <h4 id="line4_6"> GET - Player Ranking</h4>
+                
+                <pre class="brush: html">
+                  https://us-central1-oqhomapi.cloudfunctions.net/v2/players/getRanking
+                </pre>
+
+                 <p>Este endpoint permite ler os dados do ranking dos players.</p>
+
+
+                 <h5>Request</h5>
+                 <p>BODY</p>
+
+                 <pre class="brush: html">
+                  {    
+                    "search":{
+                        "email": "ian.canario@oqvocequer.com"
+                    }
+                  }
+                </pre>
+
+                 <h5>Response</h5>
+
+                 <p>BODY</p>
+                 <pre class="brush: html">
+                  {
+                    "code": 200,
+                    "success": true,
+                    "message": "Raking carregado com sucesso",
+                    "data": {
+                      "playersRankingOrder": [
+                        {
+                          "uid": "8KVXyRlnRddAJk8YnC14H9slaTv1",
+                          "name": "alexia",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 11000,
+                          "createdAt": 1601057023889,
+                          "position": 1
+                        },
+                        {
+                          "uid": "bloAoG1HyIhrWse1Pq4ajhEVcy23",
+                          "name": "Ian Canário",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 2380,
+                          "createdAt": 1601040803022,
+                          "position": 2
+                        },
+                        {
+                          "uid": "jzp5X5fSJLTSF4aTcomqJt0fL1D3",
+                          "name": "teste",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 1000,
+                          "createdAt": 1601903189345,
+                          "position": 3
+                        },
+                        {
+                          "uid": "u1e9LroNFdRJesxGHnlsusIYJbu2",
+                          "name": "teste6",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 60,
+                          "createdAt": 1602098730858,
+                          "position": 4
+                        },
+                        {
+                          "uid": "uem54zIyUdOiE2j8G3jcaCsE2yJ2",
+                          "name": "fs",
+                          "totalPoints": 50,
+                          "createdAt": 1602547834050,
+                          "position": 5
+                        },
+                        {
+                          "uid": "AwFPqAiKqrTzfzZm9LaBldUbUhk1",
+                          "name": "fee",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1602585987293,
+                          "position": 6
+                        },
+                        {
+                          "uid": "OCVtl8aVo0T6opVt10fcgkar0Wz1",
+                          "name": "fe",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1602586099027,
+                          "position": 7
+                        },
+                        {
+                          "uid": "Rw9g0JdrB7YuATgJINzdeae1LN92",
+                          "name": "g",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1602587177546,
+                          "position": 8
+                        },
+                        {
+                          "uid": "tNqOHxTrZCgUFzVu1qHw5cXlmFa2",
+                          "name": "rafal",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1603224851335,
+                          "position": 9
+                        },
+                        {
+                          "uid": "30R1aMPzw4SX5bmMo0rQv6k7ZLI2",
+                          "name": "Raphael",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1603225254803,
+                          "position": 10
+                        },
+                        {
+                          "uid": "wj7q4EXXwUSQIyVG8YIrKUrNUz83",
+                          "name": "Ian",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1603366448660,
+                          "position": 11
+                        },
+                        {
+                          "uid": "zkjwHhb7NUhjQq6EvsUYX5qqN1H3",
+                          "name": "qwerty",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 50,
+                          "createdAt": 1603473594984,
+                          "position": 12
+                        },
+                        {
+                          "uid": "ipyTfBedroYfe4izVV16f8HCoJm1",
+                          "name": "alexia",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 26,
+                          "createdAt": 1601918416963,
+                          "position": 13
+                        },
+                        {
+                          "uid": "RgCwVQfRLSar1VF3JFnOnnOeTN02",
+                          "name": "Ian",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1600969757853,
+                          "position": 14
+                        },
+                        {
+                          "uid": "GrI8ZLQun8VOETez8qkkYXBoF5k1",
+                          "name": "rafael",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1601038836675,
+                          "position": 15
+                        },
+                        {
+                          "uid": "7RBtoUUV9gNQPaUO4iHmJv81J3y2",
+                          "name": "Ian",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1601039581947,
+                          "position": 16
+                        },
+                        {
+                          "uid": "b7zL7xKV7haPWZ8hWZe3eHqOLan1",
+                          "name": "teste",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1601319105722,
+                          "position": 17
+                        },
+                        {
+                          "uid": "n4o4bLH0MBOw5Ieu6Vk2JpLcTM93",
+                          "name": "yy",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1601320028095,
+                          "position": 18
+                        },
+                        {
+                          "uid": "xgX41EMHmiZDKQcAgukbj5kQNDI3",
+                          "name": "ian",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1602096219350,
+                          "position": 19
+                        },
+                        {
+                          "uid": "vv3PxWvgIMPE2SzDbhP0kLv61nl1",
+                          "name": "teste",
+                          "avatar": "https://firebasestorage.googleapis.com/v0/b/oqhomapi.appspot.com/o/playerProfile%2Favatar.png?alt=media&token=4960beef-5a9d-4cf1-9ffa-3a20136a3d1d",
+                          "totalPoints": 0,
+                          "createdAt": 1602102137742,
+                          "position": 20
+                        }
+                      ]
+                    }
+                  }
+                 </pre>
+            </div>
+
+            <div class="col-md-12">
+              <h4 id="line4_7"> GET - List Players</h4>
+              
+              <pre class="brush: html">
+                https://us-central1-oqhomapi.cloudfunctions.net/v2/players
+              </pre>
+
+               <p>Este endpoint permite a listagem de todos os players.</p>
+
+
+               <h5>Request</h5>
+               <p>BODY</p>
+
+               <pre class="brush: html">
+                
+              </pre>
+
+               <h5>Response</h5>
+
+               <p>BODY</p>
+               <pre class="brush: html">
+                {
+                  "code": 200,
+                  "message": "Lista de players encontrada com sucesso!",
+                  "success": true,
+                  "size": 13372,
+                  "data": {
+                    "gKjkTa0RShWd5SMrWYX9Ml11Gpx1": {
+                      "actions": [
+                        "-MDESDnbzEbVZda5dgj_"
+                      ],
+                      "active": true,
+                      "clientId": "1ywXr0SjklYA2cvUTIbrqmVUpqC2",
+                      "cpf": "00000000000",
+                      "createdAt": 1598645121846,
+                      "email": "email@email.com.br",
+                      "emailVerified": false,
+                      "name": "Nome Completo",
+                      "uid": "gKjkTa0RShWd5SMrWYX9Ml11Gpx1"
+                    }
+                  }
+                }
+               </pre>
+          </div>
+                </section> 
                     
 
                     <section id="line5" class="section">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Creating Blog Pages <hr></h2>
+                                <h2 class="dark-text">Counts <hr></h2>
                             </div>
                             
                         </div>
                         
 
-                        <div class="row">
-
-                            <div class="col-md-12">
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                            </div>
-
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4 id="line5_1">WordPress Blog Page -</h4>
-                                <ul>
-                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                                </ul>
-                            </div>
+                        <div class="col-md-12">
+                          <h4 id="line5_1"> GET - Percent Engagement</h4>
+                          
+                          <pre class="brush: html">
+                            https://us-central1-oqhomapi.cloudfunctions.net/v2/leads/getPercentageEngagement
+                          </pre>
+            
+                           <p>Este end point retorna a porcentagem de engajamento total.</p>
+            
+            
+                           <h5>Request</h5>
+                           <p>BODY</p>
+            
+                           <pre class="brush: html">
                             
+                          </pre>
+            
+                           <h5>Response</h5>
+            
+                           <p>BODY</p>
+                           <pre class="brush: html">
+                            {
+                              "code": 200,
+                              "success": true,
+                              "message": "Percentual de engajamento encontrado com sucesso",
+                              "percentageEngagement": "11.7"
+                            }
+                           </pre>
+                      </div>
 
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4 id="line5_2">Blog Post Sections -</h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                                <ul>
-                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                                </ul>
-                            </div>
+                       <div class="col-md-12">
+                          <h4 id="line5_2"> GET - Percent Engagement</h4>
+                          
+                          <pre class="brush: html">
+                            https://us-central1-oqhomapi.cloudfunctions.net/v2/allSharesCount
+                          </pre>
+            
+                           <p>Este end point retorna a quantidade de ações compartilhadas.</p>
+            
+            
+                           <h5>Request</h5>
+                           <p>BODY</p>
+            
+                           <pre class="brush: html">
                             
+                          </pre>
+            
+                           <h5>Response</h5>
+            
+                           <p>BODY</p>
+                           <pre class="brush: html">
+                            {
+                              "code": 200,
+                              "success": true,
+                              "message": "Compartilhamentos encontrados com sucesso",
+                              "sharesCount": 107,
+                              "pageViewsPerWeekDay": [
+                                {
+                                  "x": 0,
+                                  "y": 0
+                                }
+                              ],
+                              "pageViewsPerDay": [
+                                {
+                                  "x": 0,
+                                  "y": 0
+                                }
+                              ],
+                              "pageViewsPerMonth": [
+                                {
+                                  "x": 0,
+                                  "y": 0
+                                }
+                              ]
+                            }
+                           </pre>
+                      </div>
 
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4 id="line5_3">Create Blog Gallery -</h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                                <ul>
-                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                                </ul>
-                            </div>
+                          <div class="col-md-12">
+                            <h4 id="line5_3"> GET - List all pageviews</h4>
                             
-
+                            <pre class="brush: html">
+                              https://us-central1-oqhomapi.cloudfunctions.net/v2/allPageViews
+                            </pre>
+              
+                            <p>Este end point retorna a quantidade de ações compartilhadas.</p>
+              
+              
+                            <h5>Request</h5>
+                            <p>BODY</p>
+              
+                            <pre class="brush: html">
+                              
+                            </pre>
+              
+                            <h5>Response</h5>
+              
+                            <p>BODY</p>
+                            <pre class="brush: html">
+                              {
+                                "pageViewCount": 1187,
+                                "pageViewsPerWeekDay": [
+                                  {
+                                    "x": "Dom",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Seg",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Ter",
+                                    "y": 9
+                                  },
+                                  {
+                                    "x": "Qua",
+                                    "y": 13
+                                  },
+                                  {
+                                    "x": "Qui",
+                                    "y": 1
+                                  },
+                                  {
+                                    "x": "Sex",
+                                    "y": 14
+                                  },
+                                  {
+                                    "x": "Sáb",
+                                    "y": 0
+                                  }
+                                ],
+                                "pageViewsPerDay": [
+                                  {
+                                    "x": 1,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 2,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 3,
+                                    "y": 9
+                                  },
+                                  {
+                                    "x": 4,
+                                    "y": 13
+                                  },
+                                  {
+                                    "x": 5,
+                                    "y": 1
+                                  },
+                                  {
+                                    "x": 6,
+                                    "y": 14
+                                  },
+                                  {
+                                    "x": 7,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 8,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 9,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 10,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 11,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 12,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 13,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 14,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 15,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 16,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 17,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 18,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 19,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 20,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 21,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 22,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 23,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 24,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 25,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 26,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 27,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 28,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 29,
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": 30,
+                                    "y": 0
+                                  }
+                                ],
+                                "pageViewsPerMonth": [
+                                  {
+                                    "x": "Jan",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Fev",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Mar",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Abr",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Mai",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Jun",
+                                    "y": 0
+                                  },
+                                  {
+                                    "x": "Jul",
+                                    "y": 111
+                                  },
+                                  {
+                                    "x": "Ago",
+                                    "y": 787
+                                  },
+                                  {
+                                    "x": "Set",
+                                    "y": 148
+                                  },
+                                  {
+                                    "x": "Out",
+                                    "y": 104
+                                  },
+                                  {
+                                    "x": "Nov",
+                                    "y": 37
+                                  },
+                                  {
+                                    "x": "Dez",
+                                    "y": 0
+                                  }
+                                ]
+                              }
+                            </pre>
                         </div>
                         
+                        <div class="col-md-12">
+                          <h4 id="line5_4"> GET - List All Conversions</h4>
+                          
+                          <pre class="brush: html">
+                            https://us-central1-oqhomapi.cloudfunctions.net/v2/allConversions
+                          </pre>
+            
+                          <p>Este endpoint lista todas as conversões por dia da semana, por mês e pelos dias do mês.</p>
+            
+            
+                          <h5>Request</h5>
+                          <p>BODY</p>
+            
+                          <pre class="brush: html">
+                            
+                          </pre>
+            
+                          <h5>Response</h5>
+            
+                          <p>BODY</p>
+                          <pre class="brush: html">
+                            {
+                              "conversionsCount": 50,
+                              "amountOfConversionsPerWeekDay": [
+                                {
+                                  "x": "Dom",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Seg",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Ter",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Qua",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Qui",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Sex",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Sáb",
+                                  "y": 0
+                                }
+                              ],
+                              "amountOfConversionsPerDay": [
+                                {
+                                  "x": 1,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 2,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 3,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 4,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 5,
+                                  "y": 5
+                                },
+                                {
+                                  "x": 6,
+                                  "y": 3
+                                },
+                                {
+                                  "x": 7,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 8,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 9,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 10,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 11,
+                                  "y": 19
+                                },
+                                {
+                                  "x": 12,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 13,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 14,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 15,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 16,
+                                  "y": 2
+                                },
+                                {
+                                  "x": 17,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 18,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 19,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 20,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 21,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 22,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 23,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 24,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 25,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 26,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 27,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 28,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 29,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 30,
+                                  "y": 0
+                                },
+                                {
+                                  "x": 31,
+                                  "y": 0
+                                }
+                              ],
+                              "amountOfConversionsPerMonth": [
+                                {
+                                  "x": "Jan",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Fev",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Mar",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Abr",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Mai",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Jun",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Jul",
+                                  "y": 4
+                                },
+                                {
+                                  "x": "Ago",
+                                  "y": 4
+                                },
+                                {
+                                  "x": "Set",
+                                  "y": 13
+                                },
+                                {
+                                  "x": "Out",
+                                  "y": 29
+                                },
+                                {
+                                  "x": "Nov",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Dez",
+                                  "y": 0
+                                }
+                              ]
+                            }
+                          </pre>
+                      </div>
 
                     </section>
                     
 
-                    <section id="line6" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">How to Install Revolution Slider <hr></h2>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <div class="row">
-
-                            <div class="col-md-12">
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                            </div>
-
-                            <div class="col-md-6">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4>Installation Slider</h4>
-                                <ul>
-                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                                </ul>
-                            </div>
-                            
-
-                            <div class="col-md-6">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                                <h4>Updating Slider</h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</p>
-                                <ul>
-                                    <li><strong>Step 1</strong> - Lorem the It is a long established fact that a reader ease read more about WordPress here.</li>
-                                    <li><strong>Step 2</strong> - Lorem the It is a long established fact that a reader will be distracted.. Please read more about WordPress here.</li>
-                                    <li><strong>Step 3</strong> - Lorem the It is a long established fact that a read.</li>
-                                </ul>
-                            </div>
-                            
-
-                        </div>
-                        
-
-                    </section>
-                    
-
-                    <section id="line7" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">How to Use Option Panel <hr></h2>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_1">General Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_2">Style Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <hr>
-
-                        <!-- <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_3">Header Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_4">Font Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_5">Slider Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_6">Page Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                           
-                        </div>
-                       
-
-                        <hr>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="upload/thumbnail.png" data-rel="prettyPhoto"><img src="images/upload/thumbnail.png" alt="" class="img-responsive img-thumbnail"></a>
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4 id="line7_7">Import & Export Options - </h4>
-                                <p>Lorem the It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. long established fact that a reader will English.</p>
-                            </div>
-                            
-                        </div>
-                        
-
-                    </section> -->
-                    
-
-                    <!-- 
-                    <section id="line8" class="section">
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Support Desk <hr></h2>
-                            </div>
-                           
-                        </div>
-                      
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p>Please remember you have purchased a very affordable theme and you have not paid for a full-time web design agency. Occasionally we will help with small tweaks, but these requests will be put on a lower priority due to their nature. Support is also 100% optional and we provide it for your connivence, so please be patient, polite and respectful.</p>
-
-                                <p>Please visit our <a href="http://themeforest.net/user/yourusername"><strong>profile page</strong></a> or ask question <a href="mailto:yourusername@gmail.com">@yourusername</a></p>
-
-                                <strong>Support for my items includes:</strong>
-                                <ul>
-                                    <li>* Responding to questions or problems regarding the item and its features</li>
-                                    <li>* Fixing bugs and reported issues</li>
-                                    <li>* Providing updates to ensure compatibility with new software versions</li>
-                                </ul>
-                                <strong>Item support does not include:</strong>
-                                <ul>
-                                    <li>* Customization and installation services</li>
-                                    <li>* Support for third party software and plug-ins</li>
-                                </ul>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <strong>Before seeking support, please...</strong>
-                                <ul>
-                                    <li>* Make sure your question is a valid Theme Issue and not a customization request.</li>
-                                    <li>* Make sure you have read through the documentation and any related video guides before asking support on how to accomplish a task.</li>
-                                    <li>* Make sure to double check the theme FAQs.</li>
-                                    <li>* Try disabling any active plugins to make sure there isn't a conflict with a plugin. And if there is this way you can let us know.</li>
-                                    <li>* If you have customized your theme and now have an issue, back-track to make sure you didn't make a mistake. If you have made changes and can't find the issue, please provide us with your changelog.</li>
-                                    <li>* Almost 80% of the time we find that the solution to people's issues can be solved with a simple "Google Search". You might want to try that before seeking support. You might be able to fix the issue yourself much quicker than we can respond to your request.</li>
-                                    <li>* Make sure to state the name of the theme you are having issues with when requesting support via ThemeForest.</li>
-                                </ul>
-                            </div>
-                        </div>
-                     
-
-                    </section>
-                     -->
-
-                    <!-- <section id="line9" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Files & Sources <hr></h2>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <strong>Included Stylesheets</strong>
-
-                                <p>These are the primary CSS files used for general front-end styling. Use these to customize your theme even further. All included JavaScript codes under <strong>yourthemename/css/</strong></p>
-
-                                <ul>
-                                    <li>1. style.css - Primary stylesheet</li>
-                                    <li>2. bootstrap.css - Bootstrap stylesheet</li>
-                                    <li>3. owl-carousel.css - OWL Carousel</li>
-                                    <li>4. fontawesome.css - FontAwesome Font Icons stylesheet</li>
-                                    <li>5. custom.css - Pathos Color Schemes stylesheet</li>
-                                    <li>6. prettyPhoto.css - Lightbox effect css file</li>
-                                    <li>7. flexslider.css - Flexslider css file</li>
-                                    <li>8. et-line.css - Elegant icons css file</li>
-                                    <li>9. carousel.css - OWL Carousel css file</li>
-                                    <li>10. animate.css - CSS3 animations css file</li>
-                                </ul>
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <strong>Included JavaScript</strong>
-
-                                <p>These are the various attribution inks to the Javascript files included or modified to work with in this theme. All included JavaScript codes under <strong>yourthemename/js/</strong></p>
-
-                                <ul>
-                                    <li>1. bootstrap.js - Bootstrap JavaScript</li>
-                                    <li>2. custom.js - All JavaScript Plugins</li>
-                                    <li>3. retina.js - Retina JavaScript</li>
-                                    <li>4. jquery.js - Base JavaScript</li>
-                                    <li>5. prettyPhoto.js - Lightbox JavaScript</li>
-                                    <li>6. owl-carousel.js - Lightbox JavaScript</li>
-                                    <li>7. revslider.js - Revolution Slider JavaScript</li>
-                                    <li>8. flexslider.js - Flexslider JavaScript</li>
-                                    <li>9. awesome-grid.nin.js - Awesome grid portfolio JavaScript</li>
-                                    <li>10. circle.js - Coming soon page JavaScript</li>
-                                    <li>11. contact.js - Contact form validate JavaScript</li>
-                                    <li>12. isotope.js - Masonry Portfolio JavaScript</li>
-                                    <li>13. progress.js - Progress bar JavaScript</li>
-                                    <li>14. rotate.js - Text rotate effect JavaScript</li>
-                                    <li>15. wow.js - CSS3 animation JavaScript</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-
-                    </section>
-                   -->
-
-                    <!-- <section id="line10" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Version History (Changelog) <hr></h2>
-                            </div>
-                            
-                        </div>
-                        
-
-                        <div class="row">
-                            <div class="col-md-12">
-
-                                <p>You can find the version history (changelog.txt) file on <strong>yourthemename-full.zip</strong> folder or you can check changelog on theme sale page.</p>
-                                <p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
-
-                                <hr>
-
-                                <h4>Changelog</h4>
-
-                                <pre class="brush: html">
-
-                                        -----------------------------------------------------------------------------------------
-                                        Version 3.8.4 - May 7th, 2015
-                                        -----------------------------------------------------------------------------------------
-
-                                        - new revolution slider plugin version
-                                        - fixed security issue with xss vulnerability
-                                        - improved demo importer for certain server environments
-                                        - updated WooCommerce template files for the outdated message in system status
-                                        - added suhosin check in system status 
-                                        - added information that explains ZipArchive is required on your server for importing demos 
-                                        - portfolio Grid template improvement
-                                        - added more information to demo popup message for individual demo requirements
-                                        - RTL style improvements
-                                        - breadcrumb function improved for various areas
-
-                                        -----------------------------------------------------------------------------------------
-                                        Version 3.8.3 - May 7th, 2015
-                                        -----------------------------------------------------------------------------------------
-                                        - fixed responsive / retina issue for larger logos
-                                        - fusion slider now uses responsive headings all the time
-                                        - dropped custom Avada styles for select boxes in IE since it is not supported
-                                        - fixed compatibility issue with Category Order and Taxonomy Terms Order plugin
-                                        - fixed issue of full width background being affected by padding options
-                                        - tested and fixed hellobar issue 
-                                        - typography settings now apply to single post pages
-                                        - improved smooth scroll in certain situations
-                                        - youtube & vimeo videos will show at normal size in light box as long as video embed link is not used
-                                        - fixed issue of â€œfixedâ€ featured image mode not working for carousels / recent work
-                                        - fixed issue of header tagline font not working with font options
-
-                                        -----------------------------------------------------------------------------------------
-                                        Version 3.8.2 - May 7th, 2015
-                                        -----------------------------------------------------------------------------------------
-                                        - fixed formatting issues with Turkish language files 
-                                        - letter spacing menu option improvement
-                                        - improved fusion slider max content width setting
-                                        - removed the â€œdisable first featured image on productsâ€ setting since it does not apply
-                                        - improved portfolio featured image loading
-                                        - removed encoding from tracking code, space before head, space before body, and custom CSS to stop it from parsing code within TO and removing special characters e.g. +
-                                        - woo login box now shows login fields for logged out users
-                                        - woo cart / my account links now show on mobile 
-                                        - fixed button styling issue with gravity forms
-
-
-                                      </pre>
-
-                            </div>
-                        </div>
-                    
-
-                    </section>
-                     -->
-
-                    <!-- <section id="line11" class="section">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
