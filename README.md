@@ -4,7 +4,7 @@ This is the oqDigital documentation, here we list all the endpoints created to f
 
 ## Contact
 
-Linkedin: https://www.linkedin.com/company/oqdigital/
+Linkedin: https://www.linkedin.com/company/oqdigital/ <br/>
 Site: https://oqdigital.com/
 
 ## Credits
