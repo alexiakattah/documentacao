@@ -1,16 +1,14 @@
-# Documentation HTML Template
-A Sample HTML Documentation Template for Wordpress Themes, HTML Templates and Plugins. Built with Bootstrap 3. 
+# Documentation oqDigital
 
-## Installation
-Download the package as ZIP and edit the HTML and CSS as you like.
+This is the oqDigital documentation, here we list all the endpoints created to facilitate access to information for customers
 
-## Demo
-Click this link for a live demo : http://surjithctly.github.io/documentation-html-template/
+## Contact
 
-## Donations & Support
-My Brain needs two urgent coffee to continue working. Buy me a coffee or two here: https://opencollective.com/documentation-template
+Linkedin: https://www.linkedin.com/company/oqdigital/
+Site: https://oqdigital.com/
 
 ## Credits
+
 This is a modified version of [Template Visual's](http://themeforest.net/user/templatevisual?ref=surjithctly&utm_source=github_surjithctly_docs) Documentation : Actual Documentation Link : http://goo.gl/RVwdHE
 
 Browser Testing by [Browserstack](https://www.browserstack.com/)
